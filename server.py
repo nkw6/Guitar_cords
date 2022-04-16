@@ -24,14 +24,29 @@ def hello():
 
 
 @app.route('/')
-def hello_world():
-   return render_template('hello_world.html')   
+def home():
+   return render_template('home.html')   
 
 
-@app.route('/hello/<name>')
-def hello_name(name=None):
-    return render_template('hello_name.html', name=name) 
+@app.route('/major')
+def major():
+    return render_template('major.html') 
 
+@app.route('/minor')
+def minor():
+    return render_template('minor.html')
+
+@app.route('/sus')
+def sus():
+    return render_template('sus.html')
+
+@app.route('/7th')
+def seventh():
+    return render_template('7th.html')
+
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
 
 @app.route('/people')
 def people():
