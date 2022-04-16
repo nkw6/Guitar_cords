@@ -1,9 +1,12 @@
+* {
+    color: white !important;
+}
+
 .navbar{
     padding-top: 25pt;
     background-color: #181818 !important;
 }
 .navbar_text{
-    color: white !important;
     font-family: Arial;
     padding: 20px;
 }

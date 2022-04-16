@@ -48,6 +48,10 @@ def seventh():
 def quiz():
     return render_template('quiz.html')
 
+@app.route('/objectives')
+def objectives():
+    return render_template('objectives.html') 
+
 @app.route('/people')
 def people():
     return render_template('people.html', data=data)  
