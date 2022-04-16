@@ -1,5 +1,20 @@
-#hello_div{
-    padding-top:  10px;
-    padding-bottom:  10px;
-    color: blue;
+.navbar{
+    padding-top: 25pt;
+    background-color: #181818 !important;
+}
+.navbar_text{
+    color: white !important;
+    font-family: Arial;
+    padding: 20px;
+}
+.navbar-brand{
+    font-size: 50px;
+}
+.navbar_brand_text{
+    font-size: 17px;
+    font-style: italic;
+    color: orange !important;
+}
+body{
+    background-color: #181818;
 }
