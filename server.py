@@ -5,17 +5,47 @@ app = Flask(__name__)
 
 
 current_id = 2
-data = [
-    {
-        "id": 1,
-        "name": "michael scott"
-    },
-    {
-        "id": 2,
-        "name": "jim halpert"
-    },
-]
 
+data = {
+    "1":{
+        "id":1,
+        "type":"major",
+        "letter":"C",
+        "image":"./data/image/majorC.png",
+        "sound":"/data/sound/majorC.mp3"
+    },
+    "2":{
+
+    },
+    ##etc...
+
+}
+
+
+quiz_data = {
+    "1":{
+        "id":"1",
+        "question":"Which of the following is an A major scale?",
+        "image0":data["1"],
+        "image1":data["4"],
+        "image2":data["5"],
+        "image3":data["2"],
+    },
+    "2": {
+        "id":"2",
+        "question":"Drag the following chords into their respective categories.",
+        "image0":data["1"],
+        "image1":data["4"],
+        "image2":data["5"],
+        "image3":data["2"],
+    },
+    "3": {
+        "id":"3",
+        "question":"What chord is shown below?",
+        "image0":data["1"]
+    }
+
+}
 # ROUTES
 
 @app.route('/hi')
@@ -46,7 +76,7 @@ def seventh():
 
 @app.route('/quiz')
 def quiz():
-    return render_template('quiz.html')
+    return render_template('quiz.html',quiz_data)
 
 @app.route('/objectives')
 def objectives():
