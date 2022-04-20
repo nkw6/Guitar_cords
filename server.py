@@ -74,9 +74,9 @@ def sus():
 def seventh():
     return render_template('7th.html')
 
-@app.route('/quiz')
-def quiz():
-    return render_template('quiz.html',quiz_data)
+@app.route('/quiz/<no>/')
+def quiz(no = None):
+    return render_template('quiz.html',quiz_data[no])
 
 @app.route('/objectives')
 def objectives():
