@@ -78,6 +78,10 @@ def quiz(no = None):
 def objectives():
     return render_template('objectives.html') 
 
+@app.route('/practice')
+def practice():
+    return render_template('practice.html') 
+
 @app.route('/people')
 def people():
     return render_template('people.html', data=data)  
