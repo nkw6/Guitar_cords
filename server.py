@@ -11,7 +11,7 @@ data = {
         "id":1,
         "type":"major",
         "letter":"C",
-        "image":"./data/image/majorC.png",
+        "image":"../data/image/majorC.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
@@ -27,17 +27,17 @@ quiz_data = {
         "id":"1",
         "question":"Which of the following is an A major scale?",
         "image0":data["1"],
-        "image1":data["4"],
-        "image2":data["5"],
-        "image3":data["2"],
+        # "image1":data["4"],
+        # "image2":data["5"],
+        # "image3":data["2"],
     },
     "2": {
         "id":"2",
         "question":"Drag the following chords into their respective categories.",
         "image0":data["1"],
-        "image1":data["4"],
-        "image2":data["5"],
-        "image3":data["2"],
+        # "image1":data["4"],
+        # "image2":data["5"],
+        # "image3":data["2"],
     },
     "3": {
         "id":"3",
@@ -65,10 +65,6 @@ def major():
 @app.route('/minor')
 def minor():
     return render_template('minor.html')
-
-@app.route('/sus')
-def sus():
-    return render_template('sus.html')
 
 @app.route('/7th')
 def seventh():
