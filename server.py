@@ -3,22 +3,49 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-
-current_id = 2
-
 data = {
     "1":{
         "id":1,
         "type":"major",
-        "letter":"C",
+        "name":"C",
         "image":"../data/image/majorC.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
-
+        "id":2,
+        "type":"major",
+        "name":"D",
+        "image":"../data/images/majorD.png",
+        "sound":"/data/audio/majorD.mp3"
     },
-    ##etc...
-
+    "3":{
+        "id":3,
+        "type":"major",
+        "name":"E",
+        "image":"../data/images/majorE.png",
+        "sound":"/data/audio/majorE.mp3"
+    },
+    "4":{
+        "id":4,
+        "type":"major",
+        "name":"F",
+        "image":"../data/images/majorF.png",
+        "sound":"/data/audio/majorF.mp3"
+    },
+    "5":{
+        "id":5,
+        "type":"major",
+        "name":"G",
+        "image":"../data/images/majorG.png",
+        "sound":"/data/audio/majorG.mp3"
+    },
+    "6":{
+        "id":6,
+        "type":"major",
+        "name":"A",
+        "image":"../data/images/majorA.png",
+        "sound":"/data/audio/majorA.mp3"
+    }
 }
 
 
