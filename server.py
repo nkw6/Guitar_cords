@@ -8,42 +8,42 @@ data = {
         "id":1,
         "type":"major",
         "name":"C",
-        "image":"../data/image/c_major.png",
+        "image":"c_major.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
         "id":2,
         "type":"major",
         "name":"D",
-        "image":"../data/images/d_major.png",
+        "image":"d_major.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "3":{
         "id":3,
         "type":"major",
         "name":"E",
-        "image":"../data/images/e_major.png",
+        "image":"e_major.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "4":{
         "id":4,
         "type":"major",
         "name":"F",
-        "image":"../data/images/f_major.png",
+        "image":"f_major.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "5":{
         "id":5,
         "type":"major",
         "name":"G",
-        "image":"../data/images/g_major.png",
+        "image":"g_major.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "6":{
         "id":6,
         "type":"major",
         "name":"A",
-        "image":"../data/images/a_major.png",
+        "image":"a_major.png",
         "sound":"/data/audio/majorA.mp3"
     },
 
