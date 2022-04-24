@@ -5,42 +5,42 @@ app = Flask(__name__)
 
 data = {
     "1":{
-        "id":1,
+        "id":"1",
         "type":"major",
         "name":"C",
         "image":"c_major.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
-        "id":2,
+        "id":"2",
         "type":"major",
         "name":"D",
         "image":"d_major.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "3":{
-        "id":3,
+        "id":"3",
         "type":"major",
         "name":"E",
         "image":"e_major.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "4":{
-        "id":4,
+        "id":"4",
         "type":"major",
         "name":"F",
         "image":"f_major.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "5":{
-        "id":5,
+        "id":"5",
         "type":"major",
         "name":"G",
         "image":"g_major.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "6":{
-        "id":6,
+        "id":"6",
         "type":"major",
         "name":"A",
         "image":"a_major.png",
@@ -50,45 +50,45 @@ data = {
 
     #data for minors
     "7":{
-        "id":7,
+        "id":"7",
         "type":"minor",
         "name":"C",
-        "image":"../data/image/c_minor.png",
+        "image":"c_minor.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "8":{
-        "id":8,
+        "id":"8",
         "type":"minor",
         "name":"D",
-        "image":"../data/images/d_minor.png",
+        "image":"d_minor.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "9":{
-        "id":9,
+        "id":"9",
         "type":"minor",
         "name":"E",
-        "image":"../data/images/e_minor.png",
+        "image":"e_minor.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "10":{
-        "id":10,
+        "id":"10",
         "type":"minor",
         "name":"F",
-        "image":"../data/images/f_minor.png",
+        "image":"f_minor.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "11":{
-        "id":11,
+        "id":"11",
         "type":"minor",
         "name":"G",
-        "image":"../data/images/g_minor.png",
+        "image":"g_minor.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "12":{
-        "id":12,
+        "id":"12",
         "type":"minor",
         "name":"A",
-        "image":"../data/images/a_minor.png",
+        "image":"a_minor.png",
         "sound":"/data/audio/majorA.mp3"
     },
 
@@ -97,45 +97,45 @@ data = {
 
     #7 datas
     "13":{
-        "id":13,
+        "id":"13",
         "type":"7",
         "name":"C",
-        "image":"../data/image/c7.png",
+        "image":"c7.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "14":{
-        "id":14,
+        "id":"14",
         "type":"7",
         "name":"D",
-        "image":"../data/images/d7.png",
+        "image":"d7.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "15":{
-        "id":15,
+        "id":"15",
         "type":"7",
         "name":"E",
-        "image":"../data/images/e7.png",
+        "image":"e7.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "16":{
-        "id":16,
+        "id":"16",
         "type":"7",
         "name":"F",
-        "image":"../data/images/f7.png",
+        "image":"f7.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "17":{
-        "id":17,
+        "id":"17",
         "type":"7",
         "name":"G",
-        "image":"../data/images/g7.png",
+        "image":"g7.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "18":{
-        "id":18,
+        "id":"18",
         "type":"7",
         "name":"A",
-        "image":"../data/images/a7.png",
+        "image":"a7.png",
         "sound":"/data/audio/majorA.mp3"
     }
 
