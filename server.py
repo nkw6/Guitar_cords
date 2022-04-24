@@ -7,42 +7,42 @@ data = {
     "1":{
         "id":1,
         "type":"major",
-        "name":"C",
+        "name":"C Major",
         "image":"../data/image/c_major.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
         "id":2,
         "type":"major",
-        "name":"D",
+        "name":"D Major",
         "image":"../data/images/d_major.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "3":{
         "id":3,
         "type":"major",
-        "name":"E",
+        "name":"E Major",
         "image":"../data/images/e_major.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "4":{
         "id":4,
         "type":"major",
-        "name":"F",
+        "name":"F Major",
         "image":"../data/images/f_major.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "5":{
         "id":5,
         "type":"major",
-        "name":"G",
+        "name":"G Major",
         "image":"../data/images/g_major.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "6":{
         "id":6,
         "type":"major",
-        "name":"A",
+        "name":"A Major",
         "image":"../data/images/a_major.png",
         "sound":"/data/audio/majorA.mp3"
     },
