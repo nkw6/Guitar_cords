@@ -1,11 +1,11 @@
 * {
-    color: white !important;
+    color: #181818 !important;
     font-family: 'Roboto', sans-serif;
 }
 
 .navbar{
     padding-top: 25pt;
-    background-color: #181818 !important;
+    background-color: whitesmoke !important;
 }
 .navbar_text{
     font-family: Arial;
@@ -17,7 +17,7 @@
 .navbar_brand_text{
     font-size: 17px;
     font-style: italic;
-    color: orange !important;
+    color: #E48A00 !important;
 }
 .prev_button{
     text-align: left;
@@ -35,7 +35,7 @@
     font-size: 40px;
 }
 body{
-    background-color: #181818;
+    background-color: whitesmoke;
 }
 
 p {
@@ -58,8 +58,8 @@ p {
 }
 
 #start-learn-btn {
-    border: 1px orange solid;
-    color: orange!important;
+    border: 1px #E48A00 solid;
+    color: #E48A00!important;
     font-weight: bold;
     font-size: x-large;
     background-color: transparent;
@@ -111,6 +111,6 @@ p {
 }
 
 .btn-arrows {
-    color: orange!important;
+    color: #E48A00!important;
     -webkit-text-stroke: 1px black;
 }
