@@ -3,6 +3,8 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
+taught = []
+
 data = {
     "1":{
         "id":"1",
@@ -247,9 +249,9 @@ def q4():
 def q5():
     return render_template('q5.html')
 
-@app.route('/people')
-def people():
-    return render_template('people.html', data=data)  
+@app.route('/objectives')
+def objectives():
+    return render_template('objectives.html', taught = taught )
 
 
 # AJAX FUNCTIONS
