@@ -2,7 +2,7 @@
 {% block content %}
     <div id="question_num">Question 2</div>
     <div id="question_text">What chord is shown bellow?</div>
-    <div id="question_img"><img src="../data/images/d_minor.png"></div>
+    <div id="question_img"><img src="../static/images/d_minor.png"></div>
     <span>
         <form>
             <input type="radio" id="html" name="fav_language" value="HTML">
@@ -17,10 +17,10 @@
     </span>
     <div>
         <span class="text-left">
-        <input type="button" value="Previous" class="prev_button">
+            <input type="button" value="Previous" class="prev_button" onclick="location.href='/q1';">
         </span>
         <span class="text-right">
-        <input type="button" value="Next" class="next_button">
+            <input type="button" value="Next" class="next_button" onclick="location.href='/q3';">
         </span>
     </div>
 {% endblock %}

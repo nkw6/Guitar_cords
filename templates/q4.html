@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div id="question_num">Question 2</div>
+    <div id="question_num">Question 4</div>
     <div id="question_text">Which of the following is A major scale?</div>
     <div>
-        <span><img src="../data/images/d_minor.png"></span>
-        <span><img src="../data/images/d_minor.png"></span>
-        <span><img src="../data/images/d_minor.png"></span>
-        <span><img src="../data/images/d_minor.png"></span>
+        <span><img src="../static/images/d_minor.png"></span>
+        <span><img src="../static/images/d_minor.png"></span>
+        <span><img src="../static/images/d_minor.png"></span>
+        <span><img src="../static/images/d_minor.png"></span>
     </div>
     
     <div>
         <span class="text-left">
-        <input type="button" value="Previous" class="prev_button">
+            <input type="button" value="Previous" class="prev_button" onclick="location.href='/q3';">
         </span>
         <span class="text-right">
-        <input type="button" value="Next" class="next_button">
+            <input type="button" value="Next" class="next_button" onclick="location.href='/q5';">
         </span>
     </div>
 {% endblock %}
