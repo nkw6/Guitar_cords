@@ -2,6 +2,81 @@
 
 {% block content %}
 
-<b>7th</b>
+<div class="learn row">
+    <h2>7th Chords</h2>
+</div>
+
+<div class="learn row">
+    <p>
+        The 7th chord (also known as dominant 7th) adds another tone to the 
+        major triad chord. As the name implies, the added tone is seven steps 
+        from the root (following the scale). These chords are also called 
+        dominant chords, and they are especially common in blues.
+    </p>
+</div>
+
+<div class="learn click-text row">
+    <p>Click the image to play the chord</p>
+</div>
+
+<!-- Container div to load in all the chords -->
+<div class="all-chords learn row">
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.A.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+seventh.A.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.C.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+ seventh.C.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.D.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+seventh.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.E.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+seventh.E.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.F.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+seventh.F.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{seventh.G.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+seventh.G.image) }}">
+        </div>
+    </div>
+</div>
+
+<div class="buttons learn row">
+    <button class="previous-btn"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
+</div>
+
+<div class="buttons learn row">
+    <button class="next-btn"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+</div>
 
 {% endblock %}
