@@ -7,42 +7,48 @@ data = {
     "1":{
         "id":"1",
         "type":"major",
-        "name":"C",
+        "letter":"C",
+        "name":"C Major",
         "image":"c_major.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "2":{
         "id":"2",
         "type":"major",
-        "name":"D",
+        "letter":"D",
+        "name":"D Major",
         "image":"d_major.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "3":{
         "id":"3",
         "type":"major",
-        "name":"E",
+        "letter":"E",
+        "name":"E Major",
         "image":"e_major.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "4":{
         "id":"4",
         "type":"major",
-        "name":"F",
+        "letter":"F",
+        "name":"F Major",
         "image":"f_major.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "5":{
         "id":"5",
         "type":"major",
-        "name":"G",
+        "letter":"G",
+        "name":"G Major",
         "image":"g_major.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "6":{
         "id":"6",
         "type":"major",
-        "name":"A",
+        "letter":"A",
+        "name":"A Major",
         "image":"a_major.png",
         "sound":"/data/audio/majorA.mp3"
     },
@@ -52,42 +58,48 @@ data = {
     "7":{
         "id":"7",
         "type":"minor",
-        "name":"C",
+        "letter":"C",
+        "name":"C Minor",
         "image":"c_minor.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "8":{
         "id":"8",
         "type":"minor",
-        "name":"D",
+        "letter":"D",
+        "name":"D Minor",
         "image":"d_minor.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "9":{
         "id":"9",
         "type":"minor",
-        "name":"E",
+        "letter":"E",
+        "name":"E Minor",
         "image":"e_minor.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "10":{
         "id":"10",
         "type":"minor",
-        "name":"F",
+        "letter":"F",
+        "name":"F Minor",
         "image":"f_minor.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "11":{
         "id":"11",
         "type":"minor",
-        "name":"G",
+        "letter":"G",
+        "name":"G Minor",
         "image":"g_minor.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "12":{
         "id":"12",
         "type":"minor",
-        "name":"A",
+        "letter":"A",
+        "name":"A Minor",
         "image":"a_minor.png",
         "sound":"/data/audio/majorA.mp3"
     },
@@ -99,42 +111,48 @@ data = {
     "13":{
         "id":"13",
         "type":"7",
-        "name":"C",
+        "letter":"C",
+        "name":"C7",
         "image":"c7.png",
         "sound":"/data/sound/majorC.mp3"
     },
     "14":{
         "id":"14",
         "type":"7",
-        "name":"D",
+        "letter":"D",
+        "name":"D7",
         "image":"d7.png",
         "sound":"/data/audio/majorD.mp3"
     },
     "15":{
         "id":"15",
         "type":"7",
-        "name":"E",
+        "letter":"E",
+        "name":"E7",
         "image":"e7.png",
         "sound":"/data/audio/majorE.mp3"
     },
     "16":{
         "id":"16",
         "type":"7",
-        "name":"F",
+        "letter":"F",
+        "name":"F7",
         "image":"f7.png",
         "sound":"/data/audio/majorF.mp3"
     },
     "17":{
         "id":"17",
         "type":"7",
-        "name":"G",
+        "letter":"G",
+        "name":"G7",
         "image":"g7.png",
         "sound":"/data/audio/majorG.mp3"
     },
     "18":{
         "id":"18",
         "type":"7",
-        "name":"A",
+        "letter":"A",
+        "name":"A7",
         "image":"a7.png",
         "sound":"/data/audio/majorA.mp3"
     }
@@ -180,10 +198,10 @@ def major():
 
     # for dat in data:   #useful if unordered
     #     if dat["type"] == "major":
-    #         major[dat["name"]] = dat
+    #         major[dat["letter"]] = dat
 
     for i in range(1,7):#loops through ordered data gets the first 6
-        major[data[str(i)]["name"]] = data[str(i)]
+        major[data[str(i)]["letter"]] = data[str(i)]
 
     return render_template('major.html',major = major)
 
@@ -192,7 +210,7 @@ def minor():
     minor = dict()
 
     for i in range(7,13):#loops through ordered data gets the minors
-        minor[data[str(i)]["name"]] = data[str(i)]
+        minor[data[str(i)]["letter"]] = data[str(i)]
 
     return render_template('minor.html',minor = minor)
 
@@ -201,7 +219,7 @@ def seventh():
     seventh = dict()
 
     for i in range(13, 19):  # loops through ordered data gets the minors
-        seventh[data[str(i)]["name"]] = data[str(i)]
+        seventh[data[str(i)]["letter"]] = data[str(i)]
 
     return render_template('7th.html',seventh = seventh)
 
@@ -232,6 +250,7 @@ def q5():
 @app.route('/people')
 def people():
     return render_template('people.html', data=data)  
+
 
 # AJAX FUNCTIONS
 
