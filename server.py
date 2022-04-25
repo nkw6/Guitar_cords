@@ -209,7 +209,6 @@ def seventh():
 def quiz(no = None):
     return render_template('quiz.html',quiz_data = quiz_data[no])
 
-<<<<<<< HEAD
 @app.route('/q1')
 def q1():
     return render_template('q1.html') 
@@ -233,9 +232,6 @@ def q5():
 @app.route('/people')
 def people():
     return render_template('people.html', data=data)  
-=======
->>>>>>> 8fe281dff911d1ea9f94078c32b0e31d901871ac
-
 
 # AJAX FUNCTIONS
 
