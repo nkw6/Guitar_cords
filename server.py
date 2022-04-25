@@ -46,6 +46,7 @@ quiz_data = {
     }
 
 }
+
 # ROUTES
 
 @app.route('/hi')
@@ -81,6 +82,26 @@ def quiz(no = None):
 @app.route('/objectives')
 def objectives():
     return render_template('objectives.html') 
+
+@app.route('/q1')
+def q1():
+    return render_template('q1.html') 
+
+@app.route('/q2')
+def q2():
+    return render_template('q2.html')
+
+@app.route('/q3')
+def q3():
+    return render_template('q3.html')
+
+@app.route('/q4')
+def q4():
+    return render_template('q4.html')
+
+@app.route('/q5')
+def q5():
+    return render_template('q5.html')
 
 @app.route('/people')
 def people():

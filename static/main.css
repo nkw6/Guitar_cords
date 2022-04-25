@@ -18,6 +18,21 @@
     font-style: italic;
     color: orange !important;
 }
+.prev_button{
+    text-align: left;
+}
+.next_button{
+    float: right;
+}
+#question_num{
+    text-align: center;
+    font-style: bold;
+    font-size: 50px;
+}
+#question_text{
+    text-align: center;
+    font-size: 40px;
+}
 body{
     background-color: #181818;
 }
