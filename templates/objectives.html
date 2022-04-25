@@ -2,11 +2,31 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <b>Objectives</b>
-    </div>
+<div class="objectives row">
+    <h2>Objectives</h2>
+</div>
 
+<div class="objectives row">
+    <div class="col">
+        <div class="module row">
+            <span class="objective-circ"></span>
+            <span class="objective-text">Major Chords</span> 
+        </div>
+        <div class="module row">
+            <span class="objective-circ"></span>
+            <span class="objective-text">Minor Chords</span> 
+        </div>
+        <div class="module row">
+            <span class="objective-circ"></span>
+            <span class="objective-text">7th Chords</span> 
+        </div>
+    </div>
+</div>
+
+<!-- Start learning module button below -->
+<div class="buttons learn row">
+    <button class="previous-btn"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
+    <button class="next-btn"><span class="btn-text">START</span><span class="btn-arrows">>></span></button>
 </div>
 
 {% endblock %}

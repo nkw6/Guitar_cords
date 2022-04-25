@@ -47,11 +47,12 @@ p {
 }
 
 /* Home Page CSS */
-.home > h2, .major-learn > h2 {
+.home > h2, .objectives > h2, 
+.major-learn > h2 {
     font-weight: bold;
 }
 
-.home.row  {
+.home.row, .objectives.row {
     text-align: center;
     justify-content: center;
     margin: 30px 0px 30px 0px;
@@ -109,8 +110,14 @@ p {
     width: 150px;
     text-decoration: none;
     border-radius: 10px;
+    border: 2px solid black;
     display: flex;
     justify-content: space-between;
+}
+
+.buttons > button:hover {
+    cursor: pointer;
+    border: 2px solid #E48A00;
 }
 
 .next-btn {
@@ -124,4 +131,24 @@ p {
 .btn-arrows {
     color: #E48A00!important;
     -webkit-text-stroke: 1px black;
+}
+
+/* Objectives CSS */
+.module {
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.objective-circ {
+    width: 18px;
+    height: 18px;
+    border: 2px solid black;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.objective-text {
+    width: 100px;
+    text-align: left;
 }
