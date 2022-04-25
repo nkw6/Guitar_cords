@@ -2,6 +2,82 @@
 
 {% block content %}
 
-<b>minor chords</b>
+<div class="learn row">
+    <h2>Minor Chords</h2>
+</div>
+
+<div class="learn row">
+    <p>
+        The minor chords are together with the minor chords the most important
+        chords to learn for guitarists. This chord type consist of a root note,
+        a minor third and a fifth. Like the minor chords, they are named after 
+        the scale of the root note and generally have a more somber 
+        characteristic.
+    </p>
+</div>
+
+<div class="learn click-text row">
+    <p>Click the image to play the chord</p>
+</div>
+
+<!-- Container div to load in all the chords -->
+<div class="all-chords learn row">
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.C.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+ minor.C.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.D.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+minor.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.E.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+minor.E.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.A.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+minor.A.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.F.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+minor.F.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{minor.G.name}}</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+minor.G.image) }}">
+        </div>
+    </div>
+</div>
+
+<div class="buttons learn row">
+    <button class="previous-btn"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
+</div>
+
+<div class="buttons learn row">
+    <button class="next-btn"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+</div>
 
 {% endblock %}
