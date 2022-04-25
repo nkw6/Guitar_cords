@@ -1,5 +1,6 @@
 * {
     color: white !important;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar{
@@ -35,4 +36,81 @@
 }
 body{
     background-color: #181818;
+}
+
+p {
+    font-size: large;
+}
+
+.learn.row  {
+    margin: 15px 0px 15px 0px;
+}
+
+/* Home Page CSS */
+.home > h2, .major-learn > h2 {
+    font-weight: bold;
+}
+
+.home.row  {
+    text-align: center;
+    justify-content: center;
+    margin: 30px 0px 30px 0px;
+}
+
+#start-learn-btn {
+    border: 1px orange solid;
+    color: orange!important;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: transparent;
+    padding: 10px 32px;
+    text-decoration: none; /* can potentially delete this */
+}
+
+/* Chord Pages CSS */
+.chord-name, .click-text {
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chord-name > p {
+    font-size: x-large;
+    margin: 0px;
+}
+
+.chord img {
+    width: -webkit-fill-available;
+    padding: 10px;
+}
+
+.click-text > p {
+    font-style: italic;
+    letter-spacing: 0.75px;
+}
+
+.buttons > button {
+    position: fixed;
+    bottom: 50px;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: whitesmoke;
+    padding: 7px 15px;
+    width: 175px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.next-btn {
+    right: 50px;
+}
+
+.btn-text {
+    color: black!important;
+}
+
+.btn-arrows {
+    color: orange!important;
+    -webkit-text-stroke: 1px black;
 }

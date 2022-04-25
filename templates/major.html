@@ -2,7 +2,73 @@
 
 {% block content %}
 
-<b>major chords</b>
+<div class="learn row">
+    <h2>Major Chords</h2>
+</div>
+
+<div class="learn row">
+    <p>A basic major chord always consists of three notes (or pitches). But since the guitar consists of six strings, some of the notes are unavoidably duplicated. All major chords are based on the major scale. The C major, C major 7th and so on are consequently based on the C major scale.</p>
+</div>
+
+<div class="learn click-text row">
+    <p>Click the image to play the chord</p>
+</div>
+
+<!-- Container div to load in all the chords -->
+<div class="all-chords learn row">
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.C.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+ major.C.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.D.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.D.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.D.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.D.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+        </div>
+    </div>
+    <div class="chords col-2">
+        <div class="chord-name row">
+            <p>{{major.D.name}} Major</p>
+        </div>
+        <div class="chord row">
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+        </div>
+    </div>
+</div>
+
+<div class="buttons learn row">
+    <button class="next-btn"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+</div>
 
 {% endblock %}
 

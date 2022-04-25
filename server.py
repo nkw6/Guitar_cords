@@ -83,6 +83,7 @@ def quiz(no = None):
 def objectives():
     return render_template('objectives.html') 
 
+<<<<<<< HEAD
 @app.route('/q1')
 def q1():
     return render_template('q1.html') 
