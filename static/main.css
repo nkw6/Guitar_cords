@@ -68,6 +68,12 @@ p {
 }
 
 /* Chord Pages CSS */
+.chords {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .chord-name, .click-text {
     justify-content: center;
     font-weight: bold;
@@ -80,7 +86,12 @@ p {
 
 .chord img {
     width: -webkit-fill-available;
-    padding: 10px;
+    margin: 10px;
+}
+
+.chord img:hover {
+    border: 1px #E48A00 solid;
+    cursor: pointer;
 }
 
 .click-text > p {
@@ -94,8 +105,8 @@ p {
     font-weight: bold;
     font-size: x-large;
     background-color: whitesmoke;
-    padding: 7px 15px;
-    width: 175px;
+    padding: 7px 17px;
+    width: 150px;
     text-decoration: none;
     border-radius: 10px;
     display: flex;
