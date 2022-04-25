@@ -7,6 +7,16 @@
     padding-top: 25pt;
     background-color: whitesmoke !important;
 }
+
+.navbar-expand .navbar-collapse {
+    width: -webkit-fill-available;
+}
+
+.navbar-expand .navbar-nav {
+    justify-content: space-evenly;
+    width: inherit;
+}
+
 .navbar_text{
     font-family: Arial;
     padding: 20px;
