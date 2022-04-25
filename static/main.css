@@ -40,6 +40,12 @@
     font-style: bold;
     font-size: 50px;
 }
+#question_img{
+    display: inline-block; 
+}
+#question_options{
+    display: inline-block; 
+}
 #question_text{
     text-align: center;
     font-size: 40px;

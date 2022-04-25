@@ -1,26 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div id="question_num">Question 2</div>
-    <div id="question_text">What chord is shown bellow?</div>
-    <div id="question_img"><img src="../static/images/d_minor.png"></div>
-    <span>
-        <form>
-            <input type="radio" id="html" name="fav_language" value="HTML">
-            <label for="html">F major</label><br>
-            <input type="radio" id="css" name="fav_language" value="CSS">
-            <label for="css">E7</label><br>
-            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript">D major</label>
-            <input type="radio" id="cminor" name="fav_language" value="cminor">
-            <label for="cminor">C minor</label>
-        </form>
-    </span>
-    <div>
-        <span class="text-left">
-            <input type="button" value="Previous" class="prev_button" onclick="location.href='/q1';">
-        </span>
-        <span class="text-right">
-            <input type="button" value="Next" class="next_button" onclick="location.href='/q3';">
-        </span>
-    </div>
+<div id="question_num">Question 2</div>
+<div id="question_text"> {{ quiz_data.question }}</div>
+<div id="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
+<div id="question_options">
+    <form>
+    <input type="radio" id="E minor" name="fav_language" value="E minor">
+    <label for="E minor">E minor</label><br>
+    <input type="radio" id="G minor" name="fav_language" value="G minor">
+    <label for="G minor">G minor</label><br>
+    <input type="radio" id="D7" name="fav_language" value="D7">
+    <label for="D7">D7</label><br>
+    <input type="radio" id="A major" name="fav_language" value="A major">
+    <label for="A major">A major</label><br>
+    </form> 
+</div>
+
+
+<div class="buttons quiz row">
+    <button class="next-btn"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+</div>
 {% endblock %}

@@ -231,24 +231,24 @@ def quiz(no = None):
 
 @app.route('/q1')
 def q1():
-    return render_template('q1.html') 
+    return render_template('q1.html',quiz_data = quiz_data['1']) 
 
 @app.route('/q2')
 def q2():
-    return render_template('q2.html')
+    return render_template('q2.html',quiz_data = quiz_data['2'])
 
 @app.route('/q3')
 def q3():
-    return render_template('q3.html')
+    return render_template('q3.html',quiz_data = quiz_data['3'])
 
 @app.route('/q4')
 def q4():
-    return render_template('q4.html')
+    return render_template('q4.html',quiz_data = quiz_data['4'])
 
 @app.route('/q5')
 def q5():
-    return render_template('q5.html')
-
+    return render_template('q5.html',quiz_data = quiz_data['5'])
+    
 @app.route('/objectives')
 def objectives():
     return render_template('objectives.html', taught = taught )
