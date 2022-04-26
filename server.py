@@ -163,16 +163,39 @@ data = {
 
 
 quiz_data = {
-    "1":{
+        "1": {
         "id":"1",
+        "nextID": "2",
+        "question":"What chord is shown below?",
+        "image0":data["1"]
+    },
+        "2": {
+        "id":"2",
+        "nextID": "3",
+        "question":"What chord is shown below?",
+        "image0":data["2"]
+    },
+    "3":{
+        "id":"3",
+        "nextID": "4",
         "question":"Which of the following is an A major scale?",
         "image0":data["6"],
         "image1":data["10"],
         "image2":data["10"],
         "image3":data["10"]
     },
-    "2": {
-        "id":"2",
+    "4":{
+        "id":"4",
+        "nextID": "5",
+        "question":"Which of the following is an A major scale?",
+        "image0":data["6"],
+        "image1":data["10"],
+        "image2":data["10"],
+        "image3":data["10"]
+    },
+    "5": {
+        "id":"5",
+        "nextID": "6",
         "question":"Drag the following chords into their respective categories.",
         "image0":data["13"],
         "image1":data["5"],
@@ -181,12 +204,6 @@ quiz_data = {
         "image4":data["17"],
         "image5":data["18"]
     },
-    "3": {
-        "id":"3",
-        "question":"What chord is shown below?",
-        "image0":data["1"]
-    }
-
 }
 
 # ROUTES
@@ -227,31 +244,20 @@ def seventh():
 
 @app.route('/quiz/<no>/')
 def quiz(no = None):
-    return render_template('quiz.html',quiz_data = quiz_data[no])
+    if (int(no) < 3):
+        return render_template('quiz_1.html',quiz_data = quiz_data[no])
+    if (int(no) < 5):
+        return render_template('quiz_2.html',quiz_data = quiz_data[no])
+    if (int(no) == 5):
+        return render_template('quiz_3.html',quiz_data = quiz_data[no])
 
-@app.route('/q1')
-def q1():
-    return render_template('q1.html',quiz_data = quiz_data['1']) 
-
-@app.route('/q2')
-def q2():
-    return render_template('q2.html',quiz_data = quiz_data['2'])
-
-@app.route('/q3')
-def q3():
-    return render_template('q3.html',quiz_data = quiz_data['3'])
-
-@app.route('/q4')
-def q4():
-    return render_template('q4.html',quiz_data = quiz_data['4'])
-
-@app.route('/q5')
-def q5():
-    return render_template('q5.html',quiz_data = quiz_data['5'])
-    
 @app.route('/objectives')
 def objectives():
     return render_template('objectives.html', taught = taught )
+
+@app.route('/results')
+def results():
+    return render_template('results.html', taught = taught )
 
 
 # AJAX FUNCTIONS
