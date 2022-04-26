@@ -27,6 +27,11 @@
             <p>{{minor.C.name}}</p>
         </div>
         <div class="chord row">
+            <!-- audio tag starts here -->
+            <audio controls>
+                <source src="{{ url_for('static', filename = 'audio/'+minor.C.sound) }}" type="audio/mp3">
+            </audio>
+            <!-- audio tag ends here --> 
             <img src="{{ url_for('static', filename = 'images/'+ minor.C.image) }}">
         </div>
     </div>
