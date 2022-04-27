@@ -1,18 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
+<script>
+    var quiz_data ={{quiz_data|tojson}}
+</script>
+<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_1.js') }}"></script> -->
 <div id="question_num">Question {{ quiz_data.id }}</div>
 <div id="question_text"> {{ quiz_data.question }}</div>
 <div id="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
 <div id="question_options">
-    <form>
-    <input type="radio" id="F major" name="fav_language" value="F major">
-    <label for="F major">F major</label><br>
-    <input type="radio" id="E7" name="fav_language" value="E7">
-    <label for="E7">E7</label><br>
-    <input type="radio" id="D major" name="fav_language" value="D major">
-    <label for="D major">D major</label><br>
-    <input type="radio" id="C minor" name="fav_language" value="C minor">
-    <label for="C minor">C minor</label><br>
+    <form id="mc_choices">
+        <input type="radio" id="F major" name="fav_language" value="F major">
+        <label for="F major">F major</label><br>
+        <input type="radio" id="E7" name="fav_language" value="E7">
+        <label for="E7">E7</label><br>
+        <input type="radio" id="D major" name="fav_language" value="D major">
+        <label for="D major">D major</label><br>
+        <input type="radio" id="C minor" name="fav_language" value="C minor">
+        <label for="C minor">C minor</label><br>
     </form> 
 </div>
 
