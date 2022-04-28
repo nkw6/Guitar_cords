@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div id="question_num">Question {{ quiz_data.id }}</div>
-    <div id="question_text"> {{ quiz_data.question }}</div>
+    <div class="question_num">Question {{ quiz_data.id }}</div>
+    <div class="question_text"> {{ quiz_data.question }}</div>
     <div>
-        <span><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></span>
-        <span><img src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}"></span>
-        <span><img src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}"></span>
-        <span><img src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}"></span>
+        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}" onclick=setAnsw(1)></span>
+        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}" onclick=setAnsw(2)></span>
+        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}" onclick=setAnsw(3)></span>
+        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}" onclick=setAnsw(4)></span>
     </div>
     
- 
+    <div id="answ_error"><span id="answ_error_text"></span></div>
     <div class="buttons quiz row">
-        <button class="next-btn" onclick="window.location.href='/quiz/{{ quiz_data.nextID }}/';" ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+        <button class="next-btn" onclick=submitAnsw({{quiz_data.id}},{{quiz_data.nextID}}) ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+       
     </div>
 
 {% endblock %}

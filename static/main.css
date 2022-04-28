@@ -35,21 +35,39 @@
 .next_button{
     float: right;
 }
-#question_num{
+/* quiz style */
+.question_num{
     text-align: center;
     font-style: bold;
     font-size: 50px;
 }
-#question_img{
+.question_img{
     display: inline-block; 
 }
-#question_options{
+.question_options{
     display: inline-block; 
 }
-#question_text{
+.question_text{
     text-align: center;
     font-size: 40px;
 }
+.scale_img{
+    height: 250px;
+}
+#answ_error{
+    color:red;
+    text-align: center;
+    visibility: hidden;
+    margin: 25px;
+    padding:25px;
+    
+}
+#answ_error_text{
+    color:red;
+    text-align: center;
+    font-size: 30px;
+}
+
 body{
     background-color: whitesmoke;
 }

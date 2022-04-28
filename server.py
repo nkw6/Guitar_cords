@@ -4,6 +4,7 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 taught = []
+score_count = 0
 
 data = {
     "1":{
@@ -166,18 +167,21 @@ quiz_data = {
         "1": {
         "id":"1",
         "nextID": "2",
+        "answ" : "1",
         "question":"What chord is shown below?",
         "image0":data["1"]
     },
         "2": {
         "id":"2",
         "nextID": "3",
+        "answ": "1",
         "question":"What chord is shown below?",
         "image0":data["2"]
     },
     "3":{
         "id":"3",
         "nextID": "4",
+        "answ":"1",
         "question":"Which of the following is an A major scale?",
         "image0":data["6"],
         "image1":data["10"],
@@ -187,6 +191,7 @@ quiz_data = {
     "4":{
         "id":"4",
         "nextID": "5",
+        "answ":"1",
         "question":"Which of the following is an A major scale?",
         "image0":data["6"],
         "image1":data["10"],
@@ -195,14 +200,21 @@ quiz_data = {
     },
     "5": {
         "id":"5",
-        "nextID": "6",
+        "nextID": "results",
         "question":"Drag the following chords into their respective categories.",
+        "answ":"1",
         "image0":data["13"],
         "image1":data["5"],
         "image2":data["3"],
         "image3":data["13"],
         "image4":data["17"],
-        "image5":data["18"]
+        "image5":data["18"],
+        "img_0_chord":"major",
+        "img_1_chord":"major",
+        "img_2_chord":"major",
+        "img_3_chord":"major",
+        "img_4_chord":"major",
+        "img_5_chord":"major",
     },
 }
 
@@ -261,11 +273,33 @@ def results():
 
 
 # AJAX FUNCTIONS
+@app.route('/submit_answ', methods=['POST'])
+def submit_answ():
+    global quiz_data 
+    global score_count 
+
+    json_data = request.get_json()   
+    answ = json_data["answ"] 
+    question_id = json_data["id"]  
+    
+    # add new entry to array with 
+    # a new id and the name the user sent in JSON
+    if(str(answ) == quiz_data[str(question_id)]["answ"]):
+        score_count += 1
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(data = score_count)
+
+@app.route('/get_score', methods=['GET'])
+def get_score(): 
+    global score_count
+
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(data = score_count)
 
 # ajax for people.js
 @app.route('/add_name', methods=['GET', 'POST'])
 def add_name():
-    global data 
+    global quiz 
     global current_id 
 
     json_data = request.get_json()   

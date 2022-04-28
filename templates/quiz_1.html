@@ -1,23 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
-<div id="question_num">Question {{ quiz_data.id }}</div>
-<div id="question_text"> {{ quiz_data.question }}</div>
-<div id="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
-<div id="question_options">
+<div class="question_num">Question {{ quiz_data.id }}</div>
+<div class="question_text"> {{ quiz_data.question }}</div>
+<div class="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
+<div class="question_options">
     <form>
-    <input type="radio" id="F major" name="fav_language" value="F major">
+    <input type="radio" id="F major" name="answer" value="1">
     <label for="F major">F major</label><br>
-    <input type="radio" id="E7" name="fav_language" value="E7">
+    <input type="radio" id="E7" name="answer" value="2">
     <label for="E7">E7</label><br>
-    <input type="radio" id="D major" name="fav_language" value="D major">
+    <input type="radio" id="D major" name="answer" value="3">
     <label for="D major">D major</label><br>
-    <input type="radio" id="C minor" name="fav_language" value="C minor">
+    <input type="radio" id="C minor" name="answer" value="4">
     <label for="C minor">C minor</label><br>
     </form> 
 </div>
 
-
+<div id="answ_error"><span id="answ_error_text"></span></div>
 <div class="buttons quiz row">
-    <button class="next-btn" onclick="window.location.href='/quiz/{{ quiz_data.nextID }}/';" ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+    <button class="next-btn" onclick=quiz1_submit({{quiz_data.id}},{{quiz_data.nextID}}) ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
 </div>
 {% endblock %}
