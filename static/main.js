@@ -1,5 +1,4 @@
 current_answ = 0;
-current_score = 0;
 
 function displayNames(data) {
   //empty old data
@@ -28,17 +27,6 @@ function quiz1_submit(id, nextID) {
     return;
   }
   submitAnsw(id, nextID);
-}
-function displayScore() {
-  $.ajax({
-    type: "GET",
-    url: "../../get_score",
-    dataType: "json",
-    success: function (result) {
-      current_score = result["data"];
-      console.log("current score==" + current_score);
-    },
-  });
 }
 function submitAnsw(id, nextID) {
   if (current_answ === 0) {
@@ -75,41 +63,3 @@ function submitAnsw(id, nextID) {
   current_answ = 0;
   window.location.href = "/quiz/" + nextID + "/";
 }
-
-function get_and_save_name() {
-  let data_to_save = { name: "name" };
-  $.ajax({
-    type: "POST",
-    url: "add_name",
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    data: JSON.stringify(data_to_save),
-    success: function (result) {
-      let all_data = result["data"];
-      data = all_data;
-      displayNames(data);
-      $("#new_name").val("");
-    },
-    error: function (request, status, error) {
-      console.log("Error");
-      console.log(request);
-      console.log(status);
-      console.log(error);
-    },
-  });
-}
-
-$(document).ready(function () {
-  //when the page loads, display all the names
-  displayNames(data);
-
-  $("#submit_name").click(function () {
-    get_and_save_name();
-  });
-
-  $("#new_name").keypress(function (e) {
-    if (e.which == 13) {
-      get_and_save_name();
-    }
-  });
-});
