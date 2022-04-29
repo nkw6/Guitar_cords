@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
-from data import *
 app = Flask(__name__)
 
 taught = []
@@ -255,6 +254,13 @@ def seventh():
 
     return render_template('7th.html',seventh = seventh)
 
+@app.route('/quiz_start')
+def quiz_start():
+    global score_count
+    
+    score_count = 0 # reset the score
+    
+    return render_template('quiz_start.html')
 @app.route('/quiz/<no>/')
 def quiz(no = None):
     if (int(no) < 3):
