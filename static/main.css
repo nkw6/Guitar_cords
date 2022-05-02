@@ -83,6 +83,16 @@ p {
     text-align: center;
 }
 
+.img-container:hover {
+    cursor: pointer!important;
+}
+.img-container:hover img {
+    opacity: 0.3!important;
+}
+.img-container:focus {
+    border: 1px #E48A00 solid;
+    color: #E48A00!important;
+}
 /* Home Page CSS */
 .home > h2, .objectives > h2, 
 .major-learn > h2 {

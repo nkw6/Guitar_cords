@@ -3,11 +3,21 @@
     <div>{{score}} / 5</div>
     <div class="question_num">Question {{ quiz_data.id }}</div>
     <div class="question_text"> {{ quiz_data.question }}</div>
-    <div>
-        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}" onclick=setAnsw(1)></span>
-        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}" onclick=setAnsw(2)></span>
-        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}" onclick=setAnsw(3)></span>
-        <span><img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}" onclick=setAnsw(4)></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 img-container">
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}" onclick=setAnsw(1)></span>
+            </div>
+            <div class="col-md-3 img-container">
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}" onclick=setAnsw(2)></span>
+            </div>
+            <div class="col-md-3 img-container">
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}" onclick=setAnsw(3)></span>
+            </div>
+            <div class="col-md-3 img-container">
+                <img class="scale_img hover-shadow" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}" onclick=setAnsw(4)></span>
+            </div>
+        </div>
     </div>
     
     <div id="answ_error"><span id="answ_error_text"></span></div>
