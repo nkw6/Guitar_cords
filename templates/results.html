@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
-Your score was {{ score }} out of 5
-
+<div class="question_num">Nice Work</div>
+<div class="question_text"> You had a score of <b>{{ score }} out of 5</b></div>
+<div class="question_text">
+    <button id="start-learn-btn" onclick="window.location.href='/quiz/1/';">Retake Quiz</button>
+    <br>
+    <button id="start-learn-btn" style="color: gray!important; border: 1px gray solid;" onclick="window.location.href='/major';">Review</button>
+</div>
 {% endblock %}

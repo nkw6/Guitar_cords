@@ -79,7 +79,9 @@ p {
 .learn.row  {
     margin: 15px 0px 15px 0px;
 }
-
+.center {
+    text-align: center;
+}
 /* Home Page CSS */
 .home > h2, .objectives > h2, 
 .major-learn > h2 {
