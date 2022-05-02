@@ -1,7 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<script>
+     function playMyAudio0(){
+       document.getElementById("myAudio0").play();
+     }
+     function playMyAudio1(){
+       document.getElementById("myAudio1").play();
+     }
+     function playMyAudio2(){
+       document.getElementById("myAudio2").play();
+     }
+     function playMyAudio3(){
+       document.getElementById("myAudio3").play();
+     }
+     function playMyAudio4(){
+       document.getElementById("myAudio4").play();
+     }
+     function playMyAudio5(){
+       document.getElementById("myAudio5").play();
+     }
+</script>
 <div class="learn row">
     <h2>Major Chords</h2>
 </div>
@@ -27,7 +46,8 @@
             <p>{{major.C.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+ major.C.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.C.audio) }}" id="myAudio0"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+ major.C.image) }}" onclick = "playMyAudio0()">
         </div>
     </div>
     <div class="chords col-2">
@@ -35,7 +55,8 @@
             <p>{{major.D.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.D.audio) }}" id="myAudio1"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+major.D.image) }}" onclick = "playMyAudio1()">
         </div>
     </div>
     <div class="chords col-2">
@@ -43,7 +64,8 @@
             <p>{{major.E.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+major.E.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.E.audio) }}" id="myAudio2"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+major.E.image) }}" onclick = "playMyAudio2()">
         </div>
     </div>
     <div class="chords col-2">
@@ -51,7 +73,8 @@
             <p>{{major.A.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+major.A.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.A.audio) }}" id="myAudio3"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+major.A.image) }}" onclick = "playMyAudio3()">
         </div>
     </div>
     <div class="chords col-2">
@@ -59,7 +82,8 @@
             <p>{{major.F.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+major.F.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.F.audio) }}" id="myAudio4"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+major.F.image) }}" onclick = "playMyAudio4()">
         </div>
     </div>
     <div class="chords col-2">
@@ -67,7 +91,8 @@
             <p>{{major.G.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+major.G.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ major.G.audio) }}" id="myAudio5"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+major.G.image) }}" onclick = "playMyAudio5()">
         </div>
     </div>
 </div>

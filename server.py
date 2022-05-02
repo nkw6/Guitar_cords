@@ -13,7 +13,7 @@ data = {
         "letter":"C",
         "name":"C Major",
         "image":"c_major.png",
-        "sound":"/data/sound/majorC.mp3"
+        "audio":"c_major.mp3"
     },
     "2":{
         "id":"2",
@@ -21,7 +21,7 @@ data = {
         "letter":"D",
         "name":"D Major",
         "image":"d_major.png",
-        "sound":"/data/audio/majorD.mp3"
+        "audio":"d_major.mp3"
     },
     "3":{
         "id":"3",
@@ -29,7 +29,7 @@ data = {
         "letter":"E",
         "name":"E Major",
         "image":"e_major.png",
-        "sound":"/data/audio/majorE.mp3"
+        "audio":"e_major.mp3"
     },
     "4":{
         "id":"4",
@@ -37,7 +37,7 @@ data = {
         "letter":"F",
         "name":"F Major",
         "image":"f_major.png",
-        "sound":"/data/audio/majorF.mp3"
+        "audio":"f_major.mp3"
     },
     "5":{
         "id":"5",
@@ -45,7 +45,7 @@ data = {
         "letter":"G",
         "name":"G Major",
         "image":"g_major.png",
-        "sound":"/data/audio/majorG.mp3"
+        "audio":"g_major.mp3"
     },
     "6":{
         "id":"6",
@@ -53,7 +53,7 @@ data = {
         "letter":"A",
         "name":"A Major",
         "image":"a_major.png",
-        "sound":"/data/audio/majorA.mp3"
+        "audio":"a_major.mp3"
     },
 
 
@@ -64,7 +64,7 @@ data = {
         "letter":"C",
         "name":"C Minor",
         "image":"c_minor.png",
-        "sound":"/data/sound/majorC.mp3"
+        "audio":"c_minor.mp3"
     },
     "8":{
         "id":"8",
@@ -72,7 +72,7 @@ data = {
         "letter":"D",
         "name":"D Minor",
         "image":"d_minor.png",
-        "sound":"/data/audio/majorD.mp3"
+        "audio":"/data/audio/majorD.mp3"
     },
     "9":{
         "id":"9",
@@ -80,7 +80,7 @@ data = {
         "letter":"E",
         "name":"E Minor",
         "image":"e_minor.png",
-        "sound":"/data/audio/majorE.mp3"
+        "audio":"e_minor.mp3"
     },
     "10":{
         "id":"10",
@@ -88,7 +88,7 @@ data = {
         "letter":"F",
         "name":"F Minor",
         "image":"f_minor.png",
-        "sound":"/data/audio/majorF.mp3"
+        "audio":"f_minor.mp3"
     },
     "11":{
         "id":"11",
@@ -96,7 +96,7 @@ data = {
         "letter":"G",
         "name":"G Minor",
         "image":"g_minor.png",
-        "sound":"/data/audio/majorG.mp3"
+        "audio":"g_minor.mp3"
     },
     "12":{
         "id":"12",
@@ -104,7 +104,7 @@ data = {
         "letter":"A",
         "name":"A Minor",
         "image":"a_minor.png",
-        "sound":"/data/audio/majorA.mp3"
+        "audio":"a_minor.mp3"
     },
 
 
@@ -117,7 +117,7 @@ data = {
         "letter":"C",
         "name":"C7",
         "image":"c7.png",
-        "sound":"/data/sound/majorC.mp3"
+        "audio":"c7.mp3"
     },
     "14":{
         "id":"14",
@@ -125,7 +125,7 @@ data = {
         "letter":"D",
         "name":"D7",
         "image":"d7.png",
-        "sound":"/data/audio/majorD.mp3"
+        "audio":"d7.mp3"
     },
     "15":{
         "id":"15",
@@ -133,7 +133,7 @@ data = {
         "letter":"E",
         "name":"E7",
         "image":"e7.png",
-        "sound":"/data/audio/majorE.mp3"
+        "audio":"e7.mp3"
     },
     "16":{
         "id":"16",
@@ -141,7 +141,7 @@ data = {
         "letter":"F",
         "name":"F7",
         "image":"f7.png",
-        "sound":"/data/audio/majorF.mp3"
+        "audio":"/f7.mp3"
     },
     "17":{
         "id":"17",
@@ -149,7 +149,7 @@ data = {
         "letter":"G",
         "name":"G7",
         "image":"g7.png",
-        "sound":"/data/audio/majorG.mp3"
+        "audio":"g7.mp3"
     },
     "18":{
         "id":"18",
@@ -157,7 +157,7 @@ data = {
         "letter":"A",
         "name":"A7",
         "image":"a7.png",
-        "sound":"/data/audio/majorA.mp3"
+        "audio":"a7.mp3"
     }
 
 }

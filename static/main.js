@@ -20,20 +20,20 @@ function quiz1_submit(id, nextID) {
     if (ele[i].checked) current_answ = ele[i].value;
     //document.getElementById("result").innerHTML = "Gender: " + ele[i].value;
   }
-  if (current_answ === 0) {
-    console.log("please select  your answer");
-    answ_error.style.visibility = "visible";
-    answ_error_text.textContent = " Please select your answer ";
-    return;
-  }
+  // if (current_answ === 0) {
+  //   console.log("please select  your answer");
+  //   answ_error.style.visibility = "visible";
+  //   answ_error_text.textContent = " Please select your answer ";
+  //   return;
+  // }
   submitAnsw(id, nextID);
 }
 function submitAnsw(id, nextID) {
-  if (current_answ === 0) {
-    answ_error.style.visibility = "visible";
-    answ_error_text.textContent = " Please select your answer ";
-    return;
-  }
+  // if (current_answ === 0) {
+  //   answ_error.style.visibility = "visible";
+  //   answ_error_text.textContent = " Please select your answer ";
+  //   return;
+  // }
   answ_to_send = {
     answ: current_answ,
     id: id,

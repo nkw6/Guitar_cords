@@ -1,7 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<script>
+     function playMyAudio0(){
+       document.getElementById("myAudio0").play();
+     }
+     function playMyAudio1(){
+       document.getElementById("myAudio1").play();
+     }
+     function playMyAudio2(){
+       document.getElementById("myAudio2").play();
+     }
+     function playMyAudio3(){
+       document.getElementById("myAudio3").play();
+     }
+     function playMyAudio4(){
+       document.getElementById("myAudio4").play();
+     }
+     function playMyAudio5(){
+       document.getElementById("myAudio5").play();
+     }
+</script>
 <div class="learn row">
     <h2>7th Chords</h2>
 </div>
@@ -26,7 +45,8 @@
             <p>{{seventh.A.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+seventh.A.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.A.audio) }}" id="myAudio0"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+seventh.A.image) }}" onclick = "playMyAudio0()">
         </div>
     </div>
     <div class="chords col-2">
@@ -34,7 +54,8 @@
             <p>{{seventh.C.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+ seventh.C.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.C.audio) }}" id="myAudio1"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+ seventh.C.image) }}" onclick = "playMyAudio1()">
         </div>
     </div>
     <div class="chords col-2">
@@ -42,7 +63,8 @@
             <p>{{seventh.D.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+seventh.D.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.D.audio) }}" id="myAudio2"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+seventh.D.image) }}" onclick = "playMyAudio2()">
         </div>
     </div>
     <div class="chords col-2">
@@ -50,7 +72,8 @@
             <p>{{seventh.E.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+seventh.E.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.E.audio) }}" id="myAudio3"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+seventh.E.image) }}" onclick = "playMyAudio3()">
         </div>
     </div>
     <div class="chords col-2">
@@ -58,7 +81,8 @@
             <p>{{seventh.F.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+seventh.F.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.F.audio) }}" id="myAudio4"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+seventh.F.image) }}" onclick = "playMyAudio4()">
         </div>
     </div>
     <div class="chords col-2">
@@ -66,14 +90,15 @@
             <p>{{seventh.G.name}}</p>
         </div>
         <div class="chord row">
-            <img src="{{ url_for('static', filename = 'images/'+seventh.G.image) }}">
+            <audio src="{{ url_for('static', filename = 'audio/'+ seventh.G.audio) }}" id="myAudio5"></audio>
+            <img src="{{ url_for('static', filename = 'images/'+seventh.G.image) }}" onclick = "playMyAudio5()">
         </div>
     </div>
 </div>
 
 <div class="buttons learn row">
     <button class="previous-btn" onclick="window.location.href='/minor';"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
-    <button class="next-btn" onclick="window.location.href='/q1';"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+    <button class="next-btn" onclick="window.location.href='/quiz_start';"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
 </div>
 
 {% endblock %}
