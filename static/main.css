@@ -4,8 +4,7 @@
 }
 
 .navbar{
-    padding-top: 25pt;
-    background-color: whitesmoke !important;
+    background-color: #F0F0F0 !important;
 }
 
 .navbar-expand .navbar-collapse {
@@ -19,11 +18,13 @@
 
 .navbar_text{
     font-family: Arial;
-    padding: 20px;
+    padding: 10px;
 }
+
 .navbar-brand{
-    font-size: 50px;
+    font-size: 30px;
 }
+
 .navbar_brand_text{
     font-size: 17px;
     font-style: italic;
@@ -69,7 +70,7 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: #FFFAF2;
 }
 
 p {
@@ -81,17 +82,6 @@ p {
 }
 .center {
     text-align: center;
-}
-
-.img-container:hover {
-    cursor: pointer!important;
-}
-.img-container:hover img {
-    opacity: 0.3!important;
-}
-.img-container:focus {
-    border: 1px #E48A00 solid;
-    color: #E48A00!important;
 }
 /* Home Page CSS */
 .home > h2, .objectives > h2, 
@@ -152,7 +142,7 @@ p {
     bottom: 50px;
     font-weight: bold;
     font-size: x-large;
-    background-color: whitesmoke;
+    background-color: #F0F0F0;
     padding: 7px 17px;
     width: 150px;
     text-decoration: none;
