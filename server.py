@@ -72,7 +72,7 @@ data = {
         "letter":"D",
         "name":"D Minor",
         "image":"d_minor.png",
-        "audio":"/data/audio/majorD.mp3"
+        "audio":"d_minor.mp3"
     },
     "9":{
         "id":"9",
