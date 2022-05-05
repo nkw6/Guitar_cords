@@ -27,11 +27,11 @@
 
 <div class="learn row">
     <p>
-        The minor chords are together with the minor chords the most important
-        chords to learn for guitarists. This chord type consist of a root note,
-        a minor third and a fifth. Like the minor chords, they are named after 
+        The minor chords are together with the major chords the most important
+        chords to learn for guitarists. This chord type consists of a root note,
+        a minor third and a fifth. Like the major chords, they are named after 
         the scale of the root note and generally have a more somber 
-        characteristic.
+        sound/characteristic.
     </p>
 </div>
 
@@ -46,11 +46,6 @@
             <p>{{minor.C.name}}</p>
         </div>
         <div class="chord row">
-            <!-- audio tag starts here -->
-{#            <audio controls>#}
-{#                <source src="{{ url_for('static', filename = 'audio/'+minor.C.audio) }}" type="audio/mp3">#}
-{#            </audio>#}
-            <!-- audio tag ends here -->
             <audio src="{{ url_for('static', filename = 'audio/'+ minor.C.audio) }}" id="myAudio0"></audio>
             <img src="{{ url_for('static', filename = 'images/'+ minor.C.image) }}" onclick = "playMyAudio0()">
         </div>
