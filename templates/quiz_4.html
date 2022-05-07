@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="score">Score: {{score}} / 5</div>
+    <div class="question_num">Question {{ quiz_data.id }}</div>
+    <div class="question_text">{{ quiz_data.question }}</div>
+  
+    
+    <div class="buttons quiz row">
+        <button class="next-btn" onclick="window.location.href='/results';" ><span class="btn-text">FINISH</span><span class="btn-arrows">>></span></button>
+    </div>
+{% endblock %}

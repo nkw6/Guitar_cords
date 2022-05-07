@@ -200,8 +200,30 @@ quiz_data = {
     },
     "5": {
         "id":"5",
+        "nextID": "6",
+        "question":"choose the correct sound",
+        "answ":"1",
+        "answer":data["13"],
+        "option1":data["13"],
+        "option2":data["5"],
+        "option3":data["3"],
+        "option4":data["13"],
+    },
+     "6": {
+        "id":"5",
+        "nextID": "7",
+        "question":"choose the correct sound",
+        "answ":"1",
+        "answer":data["4"],
+        "option1":data["1"],
+        "option2":data["18"],
+        "option3":data["4"],
+        "option4":data["11"],
+    },
+    "7": {
+        "id":"7",
         "nextID": "results",
-        "question":"Drag the following chords into their respective categories.",
+        "question":"Drag the following chords into their respective categories",
         "answ":"1",
         "image0":data["13"],
         "image1":data["5"],
@@ -267,8 +289,10 @@ def quiz(no = None):
         return render_template('quiz_1.html',quiz_data = quiz_data[no], score = score_count)
     if (int(no) < 5):
         return render_template('quiz_2.html',quiz_data = quiz_data[no], score = score_count)
-    if (int(no) == 5):
+    if (int(no) < 7):
         return render_template('quiz_3.html',quiz_data = quiz_data[no], score = score_count)
+    if (int(no) == 7):
+        return render_template('quiz_4.html',quiz_data = quiz_data[no], score = score_count)
 
 @app.route('/objectives')
 def objectives():

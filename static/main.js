@@ -46,7 +46,6 @@ function submitAnsw(id, nextID) {
     data: JSON.stringify(answ_to_send),
     success: function (result) {
       console.log("success! printing return of ajax post");
-      console.log("current score before update==" + current_score);
       console.log(result);
       current_score = result["data"];
       console.log(current_score);
