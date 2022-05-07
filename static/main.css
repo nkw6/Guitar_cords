@@ -2,7 +2,12 @@
     color: #181818 !important;
     font-family: 'Roboto', sans-serif;
 }
-
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 .navbar{
     background-color: #F0F0F0 !important;
 }
@@ -80,7 +85,9 @@ body{
 p {
     font-size: large;
 }
-
+.test.row  {
+    margin: 15px -160px 15px 0px;
+}
 .learn.row  {
     margin: 15px 0px 15px 0px;
 }

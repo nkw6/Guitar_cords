@@ -4,7 +4,7 @@
     <div class="question_num">Question {{ quiz_data.id }}</div>
     <div class="question_text">For the following {{quiz_data.answer.name}} chord {{ quiz_data.question }}</div>
     <div class="center"><img src="{{ url_for('static', filename = 'images/'+ quiz_data.answer.image) }}"></div>
-    <div class="all-chords learn row">
+    <div class="all-chords test row">
         <div class="chords col-3">
             <div class="chord row">
                 <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option1.audio) }}" id="myAudio1"></audio>
