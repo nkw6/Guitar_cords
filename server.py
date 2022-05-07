@@ -168,6 +168,7 @@ quiz_data = {
         "id":"1",
         "nextID": "2",
         "answ" : "1",
+        "answer":data["1"],
         "question":"What chord is shown below?",
         "image0":data["1"]
     },
@@ -175,6 +176,7 @@ quiz_data = {
         "id":"2",
         "nextID": "3",
         "answ": "3",
+        "answer":data["2"],
         "question":"What chord is shown below?",
         "image0":data["2"]
     },
@@ -182,21 +184,23 @@ quiz_data = {
         "id":"3",
         "nextID": "4",
         "answ":"1",
+        "answer":data["6"],
         "question":"Which of the following is an A major scale?",
         "image0":data["6"],
-        "image1":data["10"],
+        "image1":data["7"],
         "image2":data["10"],
-        "image3":data["10"]
+        "image3":data["1"]
     },
     "4":{
         "id":"4",
         "nextID": "5",
-        "answ":"1",
+        "answ":"2",
+        "answer":data["16"],
         "question":"Which of the following is an A major scale?",
-        "image0":data["6"],
-        "image1":data["10"],
-        "image2":data["10"],
-        "image3":data["10"]
+        "image0":data["4"],
+        "image1":data["16"],
+        "image2":data["2"],
+        "image3":data["8"]
     },
     "5": {
         "id":"5",
@@ -294,9 +298,10 @@ def quiz(no = None):
     if (int(no) == 7):
         return render_template('quiz_4.html',quiz_data = quiz_data[no], score = score_count)
 
-@app.route('/feedback/<no>/')
-def feedback(no = None):
-    return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count)
+@app.route('/feedback/<no>/<answ>')
+def feedback(no = None, answ = None):
+    
+    return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count,answ = answ)
 
 @app.route('/objectives')
 def objectives():
@@ -315,13 +320,17 @@ def submit_answ():
     json_data = request.get_json()   
     answ = json_data["answ"] 
     question_id = json_data["id"]  
-    
+
+
     # add new entry to array with 
     # a new id and the name the user sent in JSON
     if(str(answ) == quiz_data[str(question_id)]["answ"]):
         score_count += 1
+        corectness = "correct"
+    else:
+        corectness = "incorrect"
     #send back the WHOLE array of data, so the client can redisplay it
-    return jsonify(data = score_count)
+    return jsonify(data = corectness)
 
 if __name__ == '__main__':
    app.run(debug = True)

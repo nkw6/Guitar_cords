@@ -29,9 +29,14 @@ function quiz1_submit(id, nextID) {
   submitAnsw(id, nextID);
 }
 function quiz3_set(user_answ) {
-  setAnsw(user_answ);
+  result = setAnsw(user_answ);
   console.log("sound id ==" + user_answ);
   document.getElementById("myAudio" + user_answ).play();
+}
+function quiz3_submit(id, nextID) {
+  submitAnsw(id, nextID);
+  let answ_text = document.getElementById("answ_text");
+  answ_text.style.visibility = "visible";
 }
 function submitAnsw(id, nextID) {
   // if (current_answ === 0) {
@@ -43,6 +48,7 @@ function submitAnsw(id, nextID) {
     answ: current_answ,
     id: id,
   };
+
   $.ajax({
     type: "POST",
     url: "../../submit_answ",
@@ -50,11 +56,12 @@ function submitAnsw(id, nextID) {
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify(answ_to_send),
     success: function (result) {
-      console.log("success! printing return of ajax post");
-      console.log(result);
-      current_score = result["data"];
-      console.log(current_score);
-      return;
+      corectness = result["data"];
+      window.location.href = "/feedback/" + id + "/" + corectness;
+      //text = document.getElementById("corectness");
+      //text.style.color = "red !important";
+
+      return corectness;
     },
     error: function (request, status, error) {
       console.log("Error");
@@ -63,7 +70,4 @@ function submitAnsw(id, nextID) {
       console.log(error);
     },
   });
-
-  current_answ = 0;
-  window.location.href = "/feedback/" + id;
 }

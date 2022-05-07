@@ -1,11 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
+<script>
+    function playMyAudio0(){
+      document.getElementById("myAudio0").play();
+    }
+</script>
     <div class="score">Score: {{score}} / 7</div>
-    <div class="question_num">Question {{ quiz_data.id }}</div>
-    <div class="question_text">User feedback</div>
+    <div class="question_num"> Your answer for question {{ quiz_data.id }} was <span id="corectness">{{answ}}</span></div>
+    <div id="answ_text">The chord is {{quiz_data.answer.name}}
+        <div>It looks/sounds like this</div>
+        <div class="center">
+        <div class="chord">
+            <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.answer.audio) }}" id="myAudio0"></audio>
+            <img class="answ_img" src="{{ url_for('static', filename = 'images/'+ quiz_data.answer.image) }}" onclick = "playMyAudio0()">
+        </div>
+    </div>
+    </div>
+   
   
     
     <div class="buttons quiz row">
-        <button class="next-btn" onclick="window.location.href='/quiz/{{quiz_data.nextID}}/';" ><span class="btn-text">FINISH</span><span class="btn-arrows">>></span></button>
+        <button class="next-btn" onclick="window.location.href='/quiz/{{quiz_data.nextID}}/';" ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
     </div>
 {% endblock %}

@@ -49,6 +49,7 @@
 }
 .question_img{
     display: inline-block; 
+    margin-left: 275px;
 }
 .q1_img{
     width: 75%;
@@ -61,8 +62,18 @@
     text-align: center;
     font-size: 40px;
 }
+#answ_text{
+    text-align: center;
+    font-size: 40px;
+    visibility: visible;
+}
+.answ_img{
+    width: 300px !important;
+}
 .scale_img{
-    height: 250px;
+    height: 200px;
+}
+#corectness{
 }
 .score{
     margin-top: 25px;
