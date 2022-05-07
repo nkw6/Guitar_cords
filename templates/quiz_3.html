@@ -1,47 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-    <script>
-    function playMyAudio0(){
-      document.getElementById("myAudio0").play();
-    }
-    function playMyAudio1(){
-      document.getElementById("myAudio1").play();
-    }
-    function playMyAudio2(){
-      document.getElementById("myAudio2").play();
-    }
-    function playMyAudio3(){
-      document.getElementById("myAudio3").play();
-    }
-
-    </script>
-    <div class="score">Score: {{score}} / 5</div>
+    <div class="score">Score: {{score}} / 7</div>
     <div class="question_num">Question {{ quiz_data.id }}</div>
     <div class="question_text">For the following {{quiz_data.answer.name}} chord {{ quiz_data.question }}</div>
     <div><img src="{{ url_for('static', filename = 'images/'+ quiz_data.answer.image) }}" onclick = "playMyAudio3()"></div>
     <div class="all-chords learn row">
         <div class="chords col-3">
             <div class="chord row">
-                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option1.audio) }}" id="myAudio0"></audio>
-                <button id="start-learn-btn" onclick="playMyAudio0()">Option 1</button>
+                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option1.audio) }}" id="myAudio1"></audio>
+                <button id="start-learn-btn" onclick=quiz3_set(1)>Option 1</button>
             </div>
         </div>
         <div class="chords col-3">
             <div class="chord row">
-                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option2.audio) }}" id="myAudio1"></audio>
-                <button id="start-learn-btn" onclick="playMyAudio1()">Option 2</button>
+                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option2.audio) }}" id="myAudio2"></audio>
+                <button id="start-learn-btn" onclick=quiz3_set(2)>Option 2</button>
             </div>
         </div>
         <div class="chords col-3">
             <div class="chord row">
-                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option3.audio) }}" id="myAudio2"></audio>
-                <button id="start-learn-btn" onclick="playMyAudio2()">Option 3</button>
+                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option3.audio) }}" id="myAudio3"></audio>
+                <button id="start-learn-btn" onclick=quiz3_set(3)>Option 3</button>
             </div>
         </div>
         <div class="chords col-3">
             <div class="chord row">
-                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option4.audio) }}" id="myAudio3"></audio>
-                <button id="start-learn-btn" onclick="playMyAudio3()">Option 4</button>
+                <audio src="{{ url_for('static', filename = 'audio/'+ quiz_data.option4.audio) }}" id="myAudio4"></audio>
+                <button id="start-learn-btn" onclick=quiz3_set(4)>Option 4</button>
             </div>
         </div>
  

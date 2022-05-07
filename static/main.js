@@ -28,6 +28,11 @@ function quiz1_submit(id, nextID) {
   // }
   submitAnsw(id, nextID);
 }
+function quiz3_set(user_answ) {
+  setAnsw(user_answ);
+  console.log("sound id ==" + user_answ);
+  document.getElementById("myAudio" + user_answ).play();
+}
 function submitAnsw(id, nextID) {
   // if (current_answ === 0) {
   //   answ_error.style.visibility = "visible";
