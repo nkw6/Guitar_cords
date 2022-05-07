@@ -55,6 +55,10 @@
 .scale_img{
     height: 250px;
 }
+.score{
+    margin-top: 25px;
+    font-size: 25px;
+}
 #answ_error{
     color:red;
     text-align: center;

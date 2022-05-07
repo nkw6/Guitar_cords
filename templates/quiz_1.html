@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<div>{{score}} / 5</div>
+<div class="score"> Score: {{score}} / 5</div>
 <div class="question_num">Question {{ quiz_data.id }}</div>
 <div class="question_text"> {{ quiz_data.question }}</div>
 <div class="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
