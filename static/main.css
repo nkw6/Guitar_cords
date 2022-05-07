@@ -55,6 +55,9 @@
     width: 75%;
     height: auto;
 }
+.q2_btn{
+    margin-top: 25px;
+}
 .question_options{
     display: inline-block; 
 }
@@ -72,6 +75,14 @@
 }
 .scale_img{
     height: 200px;
+    border: 1px #E48A00 solid;
+    color: #E48A00!important;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: transparent;
+    padding: 10px 32px;
+    text-decoration: none; /* can potentially delete this */
+    cursor: pointer;
 }
 #corectness{
 }
