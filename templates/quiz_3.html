@@ -3,7 +3,7 @@
     <div class="score">Score: {{score}} / 7</div>
     <div class="question_num">Question {{ quiz_data.id }}</div>
     <div class="question_text">For the following {{quiz_data.answer.name}} chord {{ quiz_data.question }}</div>
-    <div><img src="{{ url_for('static', filename = 'images/'+ quiz_data.answer.image) }}" onclick = "playMyAudio3()"></div>
+    <div class="center"><img src="{{ url_for('static', filename = 'images/'+ quiz_data.answer.image) }}"></div>
     <div class="all-chords learn row">
         <div class="chords col-3">
             <div class="chord row">
