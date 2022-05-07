@@ -50,6 +50,10 @@
 .question_img{
     display: inline-block; 
 }
+.q1_img{
+    width: 75%;
+    height: auto;
+}
 .question_options{
     display: inline-block; 
 }

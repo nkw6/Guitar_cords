@@ -3,7 +3,7 @@
 <div class="score"> Score: {{score}} / 7</div>
 <div class="question_num">Question {{ quiz_data.id }}</div>
 <div class="question_text"> {{ quiz_data.question }}</div>
-<div class="question_img"><img src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
+<div class="question_img"><img class="q1_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
 <div class="question_options">
     <form>
     <input type="radio" id="C major" name="answer" value="1">

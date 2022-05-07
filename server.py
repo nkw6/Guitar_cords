@@ -294,6 +294,10 @@ def quiz(no = None):
     if (int(no) == 7):
         return render_template('quiz_4.html',quiz_data = quiz_data[no], score = score_count)
 
+@app.route('/feedback/<no>/')
+def feedback(no = None):
+    return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count)
+
 @app.route('/objectives')
 def objectives():
     return render_template('objectives.html', taught = taught )

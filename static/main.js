@@ -65,5 +65,5 @@ function submitAnsw(id, nextID) {
   });
 
   current_answ = 0;
-  window.location.href = "/quiz/" + nextID + "/";
+  window.location.href = "/feedback/" + id;
 }
