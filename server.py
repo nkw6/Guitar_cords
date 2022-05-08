@@ -300,7 +300,6 @@ def quiz(no = None):
 
 @app.route('/feedback/<no>/<answ>')
 def feedback(no = None, answ = None):
-    
     return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count,answ = answ)
 
 @app.route('/objectives')
@@ -321,9 +320,6 @@ def submit_answ():
     answ = json_data["answ"] 
     question_id = json_data["id"]  
 
-
-    # add new entry to array with 
-    # a new id and the name the user sent in JSON
     if(str(answ) == quiz_data[str(question_id)]["answ"]):
         score_count += 1
         corectness = "correct"
