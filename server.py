@@ -308,7 +308,7 @@ def objectives():
 
 @app.route('/results')
 def results():
-    return render_template('results.html', score = score_count )
+    return render_template('results.html', score = score_count, image="back_to_the_future.gif" )
 
 # AJAX FUNCTIONS
 @app.route('/submit_answ', methods=['POST'])
