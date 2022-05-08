@@ -1,6 +1,118 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<script>
+    let taught={{taught|tojson}} 
+    console.log(taught)
+
+    function link_objectives(data){
+        //empty old data
+        if(data.includes(1)){
+            let module = $("#obj-major-text")
+            $(module).css("font-weight", "bold")
+            $(module).hover(function(){
+                $(this).css("text-decoration", "underline");
+                $(this).css("cursor", "pointer");
+                }, function(){
+                    $(this).css("text-decoration", "none");
+            });
+            $(module).click(function(e){
+                window.location.href = "learn/"+1;
+            })
+            $("#obj-major-circ").css("background-color", "#E48A00");
+        }
+
+        if(data.includes(2)){
+            let module = $("#obj-minor-text")
+            $(module).css("font-weight", "bold")
+            $(module).hover(function(){
+                $(this).css("text-decoration", "underline");
+                $(this).css("cursor", "pointer");
+                }, function(){
+                    $(this).css("text-decoration", "none");
+            });
+            $(module).click(function(e){
+                window.location.href = "learn/"+2;
+            })
+            $("#obj-minor-circ").css("background-color", "#E48A00");
+        }
+
+        if(data.includes(3)){
+            let module = $("#obj-7th-text")
+            $(module).css("font-weight", "bold")
+            $(module).hover(function(){
+                $(this).css("text-decoration", "underline");
+                $(this).css("cursor", "pointer");
+                }, function(){
+                    $(this).css("text-decoration", "none");
+            });
+            $(module).click(function(e){
+                window.location.href = "learn/"+3;
+            })
+            $("#obj-7th-circ").css("background-color", "#E48A00");
+        }
+    }
+
+    function display_back_button(){
+        let button = $('<button class="previous-btn">')
+        $(button).append('<span class="btn-arrows"><<</span><span class="btn-text">BACK</span>')
+        $(".buttons").append(button)
+
+        if(taught.includes(3)){
+            $(button).click(function(e){
+                window.location.href = "learn/"+3;
+            })
+        } else if (taught.includes(2)){
+            $(button).click(function(e){
+                window.location.href = "learn/"+2;
+            })
+        } else {
+            $(button).click(function(e){
+                window.location.href = "learn/"+1;
+            })
+        }
+    }
+
+    function display_next_button(taught){
+        let button = $('<button class="next-btn">')
+        let btn_text = $('<span class="btn-text">')
+        if(taught.length == 0) {
+            $(btn_text).text('START')
+        } else {
+            $(btn_text).text('NEXT')
+        }
+
+        if(taught.includes(3)){
+            $(button).click(function(e){
+                window.location.href = "quiz_start";
+            })
+        } else if (taught.includes(2)){
+            $(button).click(function(e){
+                window.location.href = "learn/"+3;
+            })
+        } else if (taught.includes(1)){
+            $(button).click(function(e){
+                window.location.href = "learn/"+2;
+            })
+        } else {
+            $(button).click(function(e){
+                window.location.href = "learn/"+1;
+            })
+        }
+
+        $(button).append(btn_text)
+        $(button).append('<span class="btn-arrows">>></span>')
+        $(".buttons").append(button)
+    }
+
+    $(document).ready(function(){
+        if (taught.length != 0){
+            display_back_button()  
+        }
+        link_objectives(taught) 
+        display_next_button(taught)                        
+    })
+</script>
 
 <div class="objectives row">
     <h2>Objectives</h2>
@@ -9,24 +121,23 @@
 <div class="objectives row">
     <div class="col">
         <div class="module row">
-            <span class="objective-circ"></span>
-            <span class="objective-text">Major Chords</span> 
+            <span id="obj-major-circ" class="objective-circ"></span>
+            <span id="obj-major-text" class="objective-text">Major Chords</span> 
         </div>
         <div class="module row">
-            <span class="objective-circ"></span>
-            <span class="objective-text">Minor Chords</span> 
+            <span id="obj-minor-circ" class="objective-circ"></span>
+            <span id="obj-minor-text" class="objective-text">Minor Chords</span> 
         </div>
         <div class="module row">
-            <span class="objective-circ"></span>
-            <span class="objective-text">7th Chords</span> 
+            <span id="obj-7th-circ" class="objective-circ"></span>
+            <span id="obj-7th-text" class="objective-text">7th Chords</span> 
         </div>
     </div>
 </div>
 
 <!-- Start learning module button below -->
 <div class="buttons learn row">
-    <button class="previous-btn"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
-    <button class="next-btn"><span class="btn-text">START</span><span class="btn-arrows">>></span></button>
+
 </div>
 
 {% endblock %}

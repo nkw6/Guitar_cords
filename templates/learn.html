@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script>
+    let data={{data|tojson}} 
+
+    function learned(data){
+        let id = data["id"]
+        console.log(data["id"])
+
+        // if all values are valid - make data to save
+        mod = {"id": id}  
+
+        $.ajax({
+            type: "POST",
+            url: "../../learned_module",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(mod),
+            success: function (result) {
+            console.log(result["data"]);
+                window.location.href = "/objectives";
+
+                return corectness;
+            },
+            error: function (request, status, error) {
+                console.log("Error");
+                console.log(request);
+                console.log(status);
+                console.log(error);
+            },
+        });
+    }
+
+    $(document).ready(function(){
+        $(".previous-btn").click(function(e){
+            window.location.href = "/objectives"
+        }) 
+
+        $(".next-btn").click(function(e){
+            learned(data);
+        })                      
+    })
+
+    // Audio functions
+    function playMyAudio0(){
+       document.getElementById("myAudio0").play();
+    }
+
+    function playMyAudio1(){
+       document.getElementById("myAudio1").play();
+    }
+
+    function playMyAudio2(){
+       document.getElementById("myAudio2").play();
+    }
+
+    function playMyAudio3(){
+       document.getElementById("myAudio3").play();
+    }
+
+    function playMyAudio4(){
+       document.getElementById("myAudio4").play();
+    }
+
+    function playMyAudio5(){
+       document.getElementById("myAudio5").play();
+    }
+</script>
+
+<div class="learn row">
+    <h2>{{data.name}}</h2>
+</div>
+
+<div class="learn row">
+    <p>
+        {{data.summary}}
+    </p>
+</div>
+
+<div class="learn click-text row">
+    <p>Click the image to play the chord</p>
+</div>
+
+<div class="all-chords learn row">
+    {% for chord in data.chords %}
+        <div class="chords col-2">
+            <div class="chord-name row">
+                <p>{{chord['name']}}</p>
+            </div>
+            <div class="chord row">
+                <audio src="{{ url_for('static', filename = 'audio/'+ chord['audio']) }}" id="myAudio{{loop.index}}"></audio>
+                <img src="{{ url_for('static', filename = 'images/'+ chord['image']) }}" onclick = "playMyAudio{{loop.index}}()">
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="buttons learn row">
+    <button class="previous-btn"><span class="btn-arrows"><<</span><span class="btn-text">BACK</span></button>
+    <button class="next-btn"><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+</div>
+
+{% endblock %}

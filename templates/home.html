@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<script>
+    $(document).ready(function(){
+        $("#start-learn-btn").click(function(e){
+            window.location.href = "/objectives"
+        })                   
+    })
+</script>
+
 <div class="home row">
     <h2>Learn the basics of playing the acoustic guitar through chords</h2>
 </div>
@@ -17,7 +25,7 @@
 <!-- Start learning module button below -->
 <div class="home row">
 {#    <button id="start-learn-btn">Get Started!</button>#}
-    <button id = "start-learn-btn" onclick="window.location.href='/major';">Get Started!</button>
+    <button id = "start-learn-btn">Get Started!</button>
 
 </div>
         

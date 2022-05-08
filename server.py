@@ -162,6 +162,37 @@ data = {
 
 }
 
+modules = {
+   "1": {
+     "id": 1,
+     "name": "Major Chords",
+     "summary":"""A basic major chord always consists of three notes 
+         (or pitches). But since the guitar consists of six strings,
+         some of the notes are unavoidably duplicated. All major chords are
+         based on the major scale. The C major, C major 7th and so on are 
+         consequently based on the C major scale.""",
+     "chords": [data["1"], data["2"], data["3"], data["4"], data["5"], data["6"]]
+   },
+   "2": {
+     "id": 2,
+     "name": "Minor Chords",
+     "summary":"""The minor chords are together with the major chords the most 
+        important chords to learn for guitarists. This chord type consists of a
+         root note, a minor third and a fifth. Like the major chords, they are 
+        named after the scale of the root note and generally have a more somber 
+        sound/characteristic.""",
+     "chords": [data["7"], data["8"], data["9"], data["10"], data["11"], data["12"]]
+   },
+   "3": {
+     "id": 3,
+     "name": "7th Chords",
+     "summary":"""The 7th chord (also known as dominant 7th) adds another tone 
+        to the major triad chord. As the name implies, the added tone is seven 
+        steps from the root (following the scale). These chords are also called 
+        dominant chords, and they are especially common in blues.""",
+     "chords": [data["13"], data["14"], data["15"], data["16"], data["17"], data["18"]]
+   },
+}
 
 quiz_data = {
         "1": {
@@ -255,36 +286,18 @@ quiz_data = {
 def home():
    return render_template('home.html')
 
-@app.route('/major')
-def major():
-    major = dict()
+@app.route('/learn/<id>')
+def learn(id=None):
+   #  major = dict()
 
-    # for dat in data:   #useful if unordered
-    #     if dat["type"] == "major":
-    #         major[dat["letter"]] = dat
+   #  for i in range(1,7):#loops through ordered data gets the first 6
+   #      major[data[str(i)]["letter"]] = data[str(i)]
 
-    for i in range(1,7):#loops through ordered data gets the first 6
-        major[data[str(i)]["letter"]] = data[str(i)]
+    return render_template('learn.html', data = modules[str(id)])
 
-    return render_template('major.html',major = major)
-
-@app.route('/minor')
-def minor():
-    minor = dict()
-
-    for i in range(7,13):#loops through ordered data gets the minors
-        minor[data[str(i)]["letter"]] = data[str(i)]
-
-    return render_template('minor.html',minor = minor)
-
-@app.route('/7th')
-def seventh():
-    seventh = dict()
-
-    for i in range(13, 19):  # loops through ordered data gets the minors
-        seventh[data[str(i)]["letter"]] = data[str(i)]
-
-    return render_template('7th.html',seventh = seventh)
+@app.route('/objectives')
+def objectives():
+   return render_template('objectives.html', taught = taught )
 
 @app.route('/quiz_start')
 def quiz_start():
@@ -293,7 +306,7 @@ def quiz_start():
     score_count = 0 # reset the score
     
     return render_template('quiz_start.html')
-    
+
 @app.route('/quiz/<no>/')
 def quiz(no = None):
     if (int(no) < 3):
@@ -309,15 +322,26 @@ def quiz(no = None):
 def feedback(no = None, answ = None):
     return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count,answ = answ)
 
-@app.route('/objectives')
-def objectives():
-    return render_template('objectives.html', taught = taught )
-
 @app.route('/results')
 def results():
     return render_template('results.html', score = score_count, image="back_to_the_future.gif" )
 
 # AJAX FUNCTIONS
+# ajax for learned modules
+@app.route('/learned_module', methods=['POST'])
+def learned_module():
+    global taught
+
+    json_data = request.get_json()   
+    module = json_data["id"] 
+
+    if(module not in taught):
+      taught.append(module)
+
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(data = taught)
+
+# ajax for quiz answers
 @app.route('/submit_answ', methods=['POST'])
 def submit_answ():
     global quiz_data 
