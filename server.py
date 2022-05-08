@@ -170,7 +170,10 @@ quiz_data = {
         "answ" : "1",
         "answer":data["1"],
         "question":"What chord is shown below?",
-        "image0":data["1"]
+        "option1":data["1"],
+        "option2":data["18"],
+        "option3":data["4"],
+        "option4":data["11"],
     },
         "2": {
         "id":"2",
@@ -178,7 +181,10 @@ quiz_data = {
         "answ": "3",
         "answer":data["2"],
         "question":"What chord is shown below?",
-        "image0":data["2"]
+        "option1":data["6"],
+        "option2":data["3"],
+        "option3":data["2"],
+        "option4":data["9"],
     },
     "3":{
         "id":"3",
@@ -186,10 +192,10 @@ quiz_data = {
         "answ":"1",
         "answer":data["6"],
         "question":"Which of the following is an A major scale?",
-        "image0":data["6"],
-        "image1":data["7"],
-        "image2":data["10"],
-        "image3":data["1"]
+        "option1":data["6"],
+        "option2":data["7"],
+        "option3":data["10"],
+        "option4":data["1"]
     },
     "4":{
         "id":"4",
@@ -197,10 +203,10 @@ quiz_data = {
         "answ":"2",
         "answer":data["16"],
         "question":"Which of the following is an F7 chord?",
-        "image0":data["4"],
-        "image1":data["16"],
-        "image2":data["2"],
-        "image3":data["8"]
+        "option1":data["4"],
+        "option2":data["16"],
+        "option3":data["2"],
+        "option4":data["8"]
     },
     "5": {
         "id":"5",
