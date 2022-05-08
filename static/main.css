@@ -141,6 +141,14 @@ p {
     background-color: transparent;
     padding: 10px 32px;
     text-decoration: none; /* can potentially delete this */
+    transition: 250ms;
+}
+
+#start-learn-btn:hover {
+    cursor: pointer;
+    background-color: #E48A00;
+    color: white!important;
+    transition: 250ms;
 }
 
 /* Chord Pages CSS */

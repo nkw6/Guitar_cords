@@ -287,6 +287,7 @@ def quiz_start():
     score_count = 0 # reset the score
     
     return render_template('quiz_start.html')
+    
 @app.route('/quiz/<no>/')
 def quiz(no = None):
     if (int(no) < 3):
