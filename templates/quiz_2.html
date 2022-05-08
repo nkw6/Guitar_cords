@@ -6,27 +6,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 img-container">
-                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}" onclick=setAnsw(1)></span>
-                <div><input class="center q2_btn" type="radio" id={{ quiz_data.name }} name="answer" value="1"></div>
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></span>
+                <div><input class="center q2_btn" type="radio" id="option1" name="answer" value="1"></div>
             </div>
             <div class="col-md-3 img-container">
-                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}" onclick=setAnsw(2)></span>
-                <div><input class="center q2_btn" type="radio" id={{ quiz_data.name }}  name="answer" value="2"></div>
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}"></span>
+                <div><input class="center q2_btn" type="radio" id="option2" name="answer" value="2"></div>
             </div>
             <div class="col-md-3 img-container">
-                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}" onclick=setAnsw(3)></span>
-                <div><input class="center q2_btn" type="radio" id={{ quiz_data.name }}  name="answer" value="3"></div>
+                <img class="scale_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}"></span>
+                <div><input class="center q2_btn" type="radio" id="option3"  name="answer" value="3"></div>
             </div>
             <div class="col-md-3 img-container">
-                <img class="scale_img hover-shadow" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}" onclick=setAnsw(4)></span>
-                <div><input class="center q2_btn" type="radio" id={{ quiz_data.name }}  name="answer" value="4"></div>
+                <img class="scale_img hover-shadow" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}"></span>
+                <div><input class="center q2_btn" type="radio" id="option4" name="answer" value="4"></div>
             </div>
         </div>
     </div>
     
     <div id="answ_error"><span id="answ_error_text"></span></div>
     <div class="buttons quiz row">
-        <button class="next-btn" onclick=submitAnsw({{quiz_data.id}},{{quiz_data.nextID}}) ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+        <button class="next-btn" onclick=quiz2_submit({{quiz_data.id}},{{quiz_data.nextID}}) ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
        
     </div>
 
