@@ -4,6 +4,7 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 taught = []
+last_seen = 1
 score_count = 0
 
 data = {
@@ -297,7 +298,7 @@ def learn(id=None):
 
 @app.route('/objectives')
 def objectives():
-   return render_template('objectives.html', taught = taught )
+   return render_template('objectives.html', taught = taught, last_seen = last_seen)
 
 @app.route('/quiz_start')
 def quiz_start():
@@ -331,9 +332,11 @@ def results():
 @app.route('/learned_module', methods=['POST'])
 def learned_module():
     global taught
+    global last_seen
 
     json_data = request.get_json()   
     module = json_data["id"] 
+    last_seen = module
 
     if(module not in taught):
       taught.append(module)

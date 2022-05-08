@@ -2,7 +2,8 @@
 
 {% block content %}
 <script>
-    let taught={{taught|tojson}} 
+    let taught = {{taught|tojson}} 
+    let last_seen = {{last_seen|tojson}}
     console.log(taught)
 
     function link_objectives(data){
@@ -53,22 +54,26 @@
         }
     }
 
-    function display_back_button(){
+    function display_back_button(last_seen){
         let button = $('<button class="previous-btn">')
         $(button).append('<span class="btn-arrows"><<</span><span class="btn-text">BACK</span>')
         $(".buttons").append(button)
 
-        if(taught.includes(3)){
+        if(last_seen == 3){
             $(button).click(function(e){
                 window.location.href = "learn/"+3;
             })
-        } else if (taught.includes(2)){
+        } else if (last_seen == 2){
             $(button).click(function(e){
                 window.location.href = "learn/"+2;
             })
-        } else {
+        } else if (last_seen == 1){
             $(button).click(function(e){
                 window.location.href = "learn/"+1;
+            })
+        } else {
+            $(button).click(function(e){
+                window.location.href = "/";
             })
         }
     }
@@ -107,7 +112,7 @@
 
     $(document).ready(function(){
         if (taught.length != 0){
-            display_back_button()  
+            display_back_button(last_seen)  
         }
         link_objectives(taught) 
         display_next_button(taught)                        
