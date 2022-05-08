@@ -82,9 +82,6 @@
     background-color: transparent;
     padding: 10px 32px;
     text-decoration: none; /* can potentially delete this */
-    cursor: pointer;
-}
-#corectness{
 }
 .score{
     margin-top: 25px;
