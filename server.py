@@ -196,7 +196,7 @@ quiz_data = {
         "nextID": "5",
         "answ":"2",
         "answer":data["16"],
-        "question":"Which of the following is an A major scale?",
+        "question":"Which of the following is an F7 chord?",
         "image0":data["4"],
         "image1":data["16"],
         "image2":data["2"],
