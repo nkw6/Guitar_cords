@@ -30,10 +30,7 @@ function radio_btn_submit(id, nextID) {
 }
 function quiz3_set(user_answ) {
   result = setAnsw(user_answ);
-  /*
-  console.log("sound id ==" + user_answ);
   document.getElementById("myAudio" + user_answ).play();
-  */
 }
 function quiz3_submit(id, nextID) {
   if (current_answ === 0) {

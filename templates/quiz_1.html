@@ -3,17 +3,17 @@
 <div class="score"> Score: {{score}} / 7</div>
 <div class="question_num">Question {{ quiz_data.id }}</div>
 <div class="question_text"> {{ quiz_data.question }}</div>
-<div class="question_img"><img class="q1_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}"></div>
+<div class="question_img"><img class="q1_img" src="{{ url_for('static', filename = 'images/'+quiz_data.answer.image) }}"></div>
 <div class="question_options">
     <form>
-    <input type="radio" id="C major" name="answer" value="1">
-    <label for="C major">C major</label><br>
-    <input type="radio" id="E7" name="answer" value="2">
-    <label for="E7">E7</label><br>
-    <input type="radio" id="D major" name="answer" value="3">
-    <label for="D major">D major</label><br>
-    <input type="radio" id="C minor" name="answer" value="4">
-    <label for="C minor">C minor</label><br>
+    <input type="radio" id="option1" name="answer" value="1">
+    <label for="option1">{{quiz_data.option1.name}}</label><br>
+    <input type="radio" id="option2" name="answer" value="2">
+    <label for="option2">{{quiz_data.option2.name}}</label><br>
+    <input type="radio" id="option3" name="answer" value="3">
+    <label for="option3">{{quiz_data.option3.name}}</label><br>
+    <input type="radio" id="option4" name="answer" value="4">
+    <label for="option4">{{quiz_data.option4.name}}</label><br>
     </form> 
 </div>
 
