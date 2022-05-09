@@ -295,10 +295,6 @@ def home():
 
 @app.route('/learn/<id>')
 def learn(id=None):
-   #  major = dict()
-
-   #  for i in range(1,7):#loops through ordered data gets the first 6
-   #      major[data[str(i)]["letter"]] = data[str(i)]
 
     return render_template('learn.html', data = modules[str(id)])
 
