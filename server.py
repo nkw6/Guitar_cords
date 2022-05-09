@@ -325,7 +325,16 @@ def feedback(no = None, answ = None):
 
 @app.route('/results')
 def results():
-    return render_template('results.html', score = score_count, image="back_to_the_future.gif" )
+    global score_count
+
+    if(score_count <= 2):
+        feedback = "Keep rocking, and better luck next time!"
+    if(score_count > 2):
+        feedback = "You're a guitar hero!"
+    if(score_count >= 7):
+        feedback = "Guess you guys aren't ready for that yet, but your kids are gonna love it."
+    
+    return render_template('results.html', score = score_count, image="back_to_the_future.gif", feedback=feedback )
 
 # AJAX FUNCTIONS
 # ajax for learned modules

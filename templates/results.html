@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="question_num">Nice Work!</div>
+<div class="question_num">{{ feedback }}</div>
 <div class="question_text"> You had a score of <b>{{ score }} out of 7</b></div>
 <img class="center" src="{{ url_for('static', filename = 'images/'+ image) }}">
 <br>
