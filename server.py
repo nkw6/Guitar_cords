@@ -201,6 +201,7 @@ quiz_data = {
         "nextID": "2",
         "answ" : "1",
         "answer":data["1"],
+        "finished": "false",
         "question":"What chord is shown below?",
         "option1":data["1"],
         "option2":data["18"],
@@ -212,6 +213,7 @@ quiz_data = {
         "nextID": "3",
         "answ": "3",
         "answer":data["2"],
+        "finished": "false",
         "question":"What chord is shown below?",
         "option1":data["6"],
         "option2":data["3"],
@@ -223,6 +225,7 @@ quiz_data = {
         "nextID": "4",
         "answ":"1",
         "answer":data["6"],
+        "finished": "false",
         "question":"Which of the following is an A major scale?",
         "option1":data["6"],
         "option2":data["7"],
@@ -234,6 +237,7 @@ quiz_data = {
         "nextID": "5",
         "answ":"2",
         "answer":data["16"],
+        "finished": "false",
         "question":"Which of the following is an F7 chord?",
         "option1":data["4"],
         "option2":data["16"],
@@ -256,6 +260,7 @@ quiz_data = {
         "nextID": "7",
         "question":"choose the correct sound",
         "answ":"3",
+        "finished": "false",
         "answer":data["4"],
         "option1":data["1"],
         "option2":data["18"],
@@ -267,6 +272,7 @@ quiz_data = {
         "nextID": "results",
         "question":"Drag the following chords into their respective categories",
         "answ":"1",
+        "finished": "false",
         "image0":data["13"],
         "image1":data["5"],
         "image2":data["3"],
@@ -305,7 +311,9 @@ def quiz_start():
     global score_count
     
     score_count = 0 # reset the score
-    
+    for x in quiz_data: 
+        quiz_data[x]["finished"] = "false" # reset finished questions
+
     return render_template('quiz_start.html')
 
 @app.route('/quiz/<no>/')
@@ -364,7 +372,9 @@ def submit_answ():
     question_id = json_data["id"]  
 
     if(str(answ) == quiz_data[str(question_id)]["answ"]):
-        score_count += 1
+        if(quiz_data[str(question_id)]["finished"] == "false"):
+            score_count += 1
+            quiz_data[str(question_id)]["finished"] = "true"
         corectness = "correct"
     else:
         corectness = "incorrect"
