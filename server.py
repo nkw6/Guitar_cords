@@ -378,10 +378,11 @@ def submit_answ():
     if(str(answ) == quiz_data[str(question_id)]["answ"]):
         if(quiz_data[str(question_id)]["finished"] == "false"):
             score_count += 1
-            quiz_data[str(question_id)]["finished"] = "true"
         corectness = "correct"
     else:
         corectness = "incorrect"
+    
+    quiz_data[str(question_id)]["finished"] = "true"
     #send back the WHOLE array of data, so the client can redisplay it
     return jsonify(data = corectness)
 
@@ -396,10 +397,10 @@ def submit_multi_answ():
     if set(major) == set(quiz_data["7"]["answ"]["major"]) and set(minor) == set(quiz_data["7"]["answ"]["minor"]):
         if(quiz_data["7"]["finished"] == "false"):
             score_count += 1
-            quiz_data["7"]["finished"] = "true"
         corectness = "correct"
     else:
         corectness = "incorrect"
+    quiz_data["7"]["finished"] = "true"
     #send back the WHOLE array of data, so the client can redisplay it
     return jsonify(data = corectness)
 
