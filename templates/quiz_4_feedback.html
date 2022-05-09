@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="score">Score: {{score}} / 7</div>
+    <div class="question_num"> Your answer for question 7 was <span id="corectness">{{answ}}</span></div>
+    <div id="answ_text">The correct classification was:
+    </div>
+    <div>
+        <img style="max-width: 100%;" src="{{ url_for('static', filename = 'images/quiz_7_correct.png')}}">
+    </div>
+    </div>
+   
+  
+    
+    <div class="buttons quiz row">
+        <button class="next-btn" onclick="window.location.href='/results';" ><span class="btn-text">NEXT</span><span class="btn-arrows">>></span></button>
+    </div>
+{% endblock %}

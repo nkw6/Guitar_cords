@@ -271,14 +271,14 @@ quiz_data = {
         "id":"7",
         "nextID": "results",
         "question":"Drag the following chords into their respective categories",
-        "answ":"1",
+        "answ": {"major": ["1", "2", "5"], "minor": ["0", "3", "4"]},
         "finished": "false",
-        "image0":data["13"],
+        "image0":data["9"],
         "image1":data["5"],
         "image2":data["3"],
-        "image3":data["13"],
-        "image4":data["17"],
-        "image5":data["18"],
+        "image3":data["8"],
+        "image4":data["7"],
+        "image5":data["1"],
         "img_0_chord":"major",
         "img_1_chord":"major",
         "img_2_chord":"major",
@@ -331,6 +331,10 @@ def quiz(no = None):
 def feedback(no = None, answ = None):
     return render_template('feedback.html',quiz_data = quiz_data[no], score = score_count,answ = answ)
 
+@app.route('/multi_feedback/<no>/<answ>')
+def multi_feedback(no = None, answ = None):
+    return render_template('quiz_4_feedback.html',quiz_data = quiz_data[no], score = score_count,answ = answ)
+    
 @app.route('/results')
 def results():
     global score_count
@@ -375,6 +379,24 @@ def submit_answ():
         if(quiz_data[str(question_id)]["finished"] == "false"):
             score_count += 1
             quiz_data[str(question_id)]["finished"] = "true"
+        corectness = "correct"
+    else:
+        corectness = "incorrect"
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(data = corectness)
+
+@app.route('/submit_multi_answ', methods=['POST'])
+def submit_multi_answ():
+    global quiz_data 
+    global score_count 
+
+    json_data = request.get_json()   
+    major = eval(json_data['major'])
+    minor = eval(json_data['minor'])
+    if set(major) == set(quiz_data["7"]["answ"]["major"]) and set(minor) == set(quiz_data["7"]["answ"]["minor"]):
+        if(quiz_data["7"]["finished"] == "false"):
+            score_count += 1
+            quiz_data["7"]["finished"] = "true"
         corectness = "correct"
     else:
         corectness = "incorrect"

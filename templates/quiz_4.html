@@ -1,11 +1,57 @@
 {% extends "layout.html" %}
 {% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_4.js') }}"></script>
     <div class="score">Score: {{score}} / 7</div>
     <div class="question_num">Question {{ quiz_data.id }}</div>
     <div class="question_text">{{ quiz_data.question }}</div>
-  
-    
+    <div class="container">
+        <div class="row-container">
+            <div class="option-container">
+                <div class="draggable" id="0">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image0.image) }}">
+                </div>
+            </div>
+            <div class="option-container">
+                <div class="draggable" id="1">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image1.image) }}">
+                </div>
+            </div>
+            <div class="option-container">
+                <div class="draggable" id="2">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image2.image) }}">
+                </div>
+            </div>
+            <div class="option-container">
+                <div class="draggable" id="3">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image3.image) }}">
+                </div>
+            </div>    
+            <div class="option-container">
+                <div class="draggable" id="4">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image4.image) }}">
+                </div>
+            </div> 
+            <div class="option-container">
+                <div class="draggable" id="5">
+                    <img class="drag_img" src="{{ url_for('static', filename = 'images/'+quiz_data.image5.image) }}">
+                </div>
+            </div> 
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">   
+        <div class="col-md-5">
+            <div class="drop-box" id="major"></div>
+            <div class="title" id="major">Major</div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="drop-box" id="minor"></div>
+            <div class="title" id="minor">Minor</div>
+        </div>
+    </div>
+    <div id="answ_error" class="question_text">Please select your answer</div>
     <div class="buttons quiz row">
-        <button class="next-btn" onclick="window.location.href='/results';" ><span class="btn-text">FINISH</span><span class="btn-arrows">>></span></button>
+        <button class="next-btn" onclick=quiz4_submit() ><span class="btn-text">FINISH</span><span class="btn-arrows">>></span></button>
     </div>
 {% endblock %}

@@ -118,6 +118,49 @@ p {
 .center {
     text-align: center;
 }
+.row-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 900px;
+    height: 100px;
+    margin: 20px;
+}
+.option-container {
+    flex: 23%;
+    height: 120px;
+    width: 120px;
+}
+.draggable {
+    height: 120px;
+    width: 120px;
+}
+.drag_img {
+    height: 100%;
+}
+.title {
+    font-size: x-large;
+    text-align: center;
+}
+.drop-box {
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px black solid;
+    height: 280px;
+    background-color: lightgray;
+}
+.darken {
+    background-color: darkgray;
+}
+.ui-draggable-dragging {
+    opacity: 0.3;
+    z-index: 99;
+    cursor: move;
+}
+.opaque {
+    opacity: 0.3;
+}
+
 /* Home Page CSS */
 .home > h2, .objectives > h2, 
 .major-learn > h2 {
